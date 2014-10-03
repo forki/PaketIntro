@@ -15,6 +15,8 @@
 
 ### paket.dependencies
 
+
+
     source https://nuget.org/api/v2
     
     nuget Castle.Windsor-log4net ~> 3.2
@@ -44,13 +46,12 @@
 
 ***
 
-### Syntax Highlighting
+### paket.references
 
-#### F# (with tooltips)
-
-    let a = 5
-    let factorial x = [1..x] |> List.reduce (*)
-    let c = factorial a
+    Newtonsoft.Json
+    UnionArgParser
+    DotNetZip
+    RestSharp
 
 ---
 
