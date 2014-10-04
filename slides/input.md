@@ -55,19 +55,13 @@
 
 ---
 
-#### C#
+#### Convert from NuGet
 
-    [lang=cs]
-    using System;
+- Automatic converter available
 
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("Hello, world!");
-        }
-    }
-
+    $ paket convert-from-nuget
+    
+    
 ---
 
 #### JavaScript
