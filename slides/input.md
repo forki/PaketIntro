@@ -61,6 +61,12 @@
 
     $ paket convert-from-nuget
     
+- finds all packages.config files
+  - converts them to paket.references files
+  - generates a paket.dependencies file with all dependencies
+  - generates paket.lock file
+- package restore process will be converted
+- installs all packages
     
 ---
 
