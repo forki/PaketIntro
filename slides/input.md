@@ -13,21 +13,34 @@
 
 ***
 
-### Reveal.js
+### paket.dependencies
 
-- A framework for easily creating beautiful presentations using HTML.
-
-
-> **Atwood's Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.
+    source https://nuget.org/api/v2
+    
+    nuget Castle.Windsor-log4net ~> 3.2
+    nuget NUnit
 
 ***
 
-### FSharp.Formatting
+### paket.lock
 
-- F# tools for generating documentation (Markdown processor and F# code formatter).
-- It parses markdown and F# script file and generates HTML or PDF.
-- Code syntax highlighting support.
-- It also evaluates your F# code and produce tooltips.
+    NUGET
+      remote: https://nuget.org/api/v2
+      specs:
+        Castle.Core (3.3.1)
+        Castle.Core-log4net (3.3.1)
+          Castle.Core (>= 3.3.1)
+          log4net (1.2.10)
+        Castle.LoggingFacility (3.3.0)
+          Castle.Core (>= 3.3.0)
+          Castle.Windsor (>= 3.3.0)
+        Castle.Windsor (3.3.0)
+          Castle.Core (>= 3.3.0)
+        Castle.Windsor-log4net (3.3.0)
+          Castle.Core-log4net (>= 3.3.0)
+          Castle.LoggingFacility (>= 3.3.0)
+        log4net (1.2.10)
+        NUnit (2.6.3)
 
 ***
 
