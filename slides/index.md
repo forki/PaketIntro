@@ -9,7 +9,26 @@
 ### What is Paket?
 
 - Dependency manager for .NET and Mono projects
-- Allows to include NuGet packages and GitHub files 
+- Allows to include NuGet packages and GitHub files
+
+![Logo](images/logo.png) 
+
+***
+
+### Why another package manager?
+
+- NuGet has no global view of your dependencies
+- NuGet has no concept of indirect dependencies
+- If versions are conflicting, NuGet will [silently take the latest version](http://fsprojects.github.io/Paket/controlling-nuget-resolution.html)
+- NuGet puts the version no. in the path => updates are a nightmare
+- NuGet doesn't allow to reference GitHub files
+
+***
+
+### Why don't you contribute to NuGet?
+
+- Things like the removement of the version no. from the path are breaking 
+- NuGet made clear they won't accept these changes
 
 ***
 
@@ -68,3 +87,7 @@
   - generates paket.lock file
 - package restore process will be converted
 - installs all packages
+
+***
+
+- Slides can be found at: https://github.com/forki/PaketIntro
