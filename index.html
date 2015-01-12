@@ -259,7 +259,8 @@
 <h3>paket.dependencies</h3>
 
 <ul>
-<li>Specifies all direct dependencies:</li>
+<li>Specifies all direct dependencies</li>
+<li>Manually editable (or via paket.exe commands)</li>
 </ul>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
@@ -294,6 +295,7 @@
 
 <ul>
 <li>Graph of used versions for all dependencies</li>
+<li>Compareable to a unified view of all <code>packages.config</code></li>
 <li>Automatically computed from <code>paket.dependencies</code>:</li>
 </ul>
 
@@ -341,18 +343,23 @@
 
 <h3>paket.references</h3>
 
+<ul>
+<li>Specifies which dependencies are used in a given project</li>
+<li>Compareable to <code>packages.config</code>, but without versions</li>
+<li>Only direct dependencies need to  be listed</li>
+<li>Manually editable</li>
+</ul>
+
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
-<span class="l">4: </span>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
 <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span>
 <span class="i">UnionArgParser</span>
-<span class="i">DotNetZip</span>
-<span class="i">RestSharp</span></pre>
+<span class="i">NUnit</span></pre>
 </td>
 </tr>
 </table>
@@ -365,19 +372,109 @@
 
 <section >
 
-<h4>Convert from NuGet</h4>
+<h3>Installing packages</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">$</span> <span class="i">paket</span> <span class="i">install</span></pre>
+</td>
+</tr>
+</table>
 
 <ul>
-<li><p>Automatic converter available</p>
-<p>$ paket convert-from-nuget</p></li>
-<li>finds all packages.config files
+<li>Computes <code>paket.lock</code> based on <code>paket.dependencies</code></li>
+<li>Restores all direct and indirect dependencies</li>
+<li>Processes all projects and adds references to the libraries</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Checking for updates</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">$</span> <span class="i">paket</span> <span class="i">outdated</span></pre>
+</td>
+</tr>
+</table>
+
 <ul>
-<li>converts them to paket.references files</li>
-<li>generates a paket.dependencies file with all dependencies</li>
-<li>generates paket.lock file</li>
+<li>Lists all dependencies that have newer versions available</li>
+</ul>
+
+<br /><br />
+<img style="border: none" src="images/paket-outdated.png" alt="Paket outdated" /> 
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Convert from NuGet</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">$</span> <span class="i">paket</span> <span class="i">convert</span><span class="o">-</span><span class="i">from</span><span class="o">-</span><span class="i">nuget</span></pre>
+</td>
+</tr>
+</table>
+
+<ul>
+<li>Finds all packages.config files
+<ul>
+<li>Converts them to paket.references files</li>
+<li>Generates a paket.dependencies file with all dependencies</li>
+<li>Generates paket.lock file</li>
 </ul></li>
-<li>package restore process will be converted</li>
-<li>installs all packages</li>
+<li>Package restore process will be converted</li>
+<li>Runs <code>paket install</code></li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Simplify dependencies</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">$</span> <span class="i">paket</span> <span class="i">simplify</span></pre>
+</td>
+</tr>
+</table>
+
+<ul>
+<li>Computes indirect dependencies from <code>paket.lock</code> file
+<ul>
+<li>Removes these from <code>paket.dependencies</code></li>
+<li>Removes these <code>paket.references</code></li>
+</ul></li>
+<li>Especially useful after conversion from NuGet (<a href="http://fsprojects.github.io/Paket/paket-simplify.html#Sample">Sample</a>)</li>
 </ul>
 
 </section>
