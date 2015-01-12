@@ -25,7 +25,7 @@
 <br /><br />
 <img style="border: none" src="images/nuget.png" alt="Nuget logo" /> 
 
---- 
+*** 
 
 ### Why another package manager?
 
@@ -37,10 +37,10 @@
 <br /><br />
 <img style="border: none" src="images/MassTransit.png" alt="packages.config everywhere" /> 
 
---- 
+*** 
 
 ### Why another package manager?
-
+    
 - NuGet has no concept of indirect dependencies
 - Which packages do we really need?
 
@@ -66,7 +66,7 @@
       <package id="RProvider" version="1.0.13" targetFramework="net45" />
     </packages>
 
---- 
+*** 
 
 ### Why another package manager?
 
@@ -84,7 +84,7 @@
     #I "packages/R.NET.Community.1.5.15/lib/net40"
     #I "packages/R.NET.Community.FSharp.0.1.8/lib/net40"
 
----
+***
 
 ### Why another package manager?
 
@@ -105,7 +105,7 @@
 ### Paket file structure
 
 - `paket.dependencies`: Global definition of dependencies
-- `paket.lock`: Currently used versions of all dependencies
+- `paket.lock`: List of used versions for all dependencies
 - `paket.references`: Dependency definition per project
 
 
@@ -120,34 +120,36 @@
 
 
      source https://nuget.org/api/v2
-     
-     nuget Castle.Windsor-log4net ~> 3.2   // >= 3.2 
-     nuget Newtonsoft.Json                 // any version
-     nuget UnionArgParser >= 1.7           // 1.7 <= x < 2.0
-     nuget NUnit prerelease                // any version incl. prereleases
+           
+     nuget Newtonsoft.Json         // any version
+     nuget UnionArgParser >= 0.7   // x >= 0.7
+     nuget log4net ~> 1.2          // 1.2 <= x < 2     
+     nuget NUnit prerelease        // any version incl. prereleases
     
 
 ***
 
 ### paket.lock
 
+- Graph of used versions for all dependencies
+- Automatically computed from `paket.dependencies`:
+
+
     NUGET
       remote: https://nuget.org/api/v2
       specs:
-        Castle.Core (3.3.1)
-        Castle.Core-log4net (3.3.1)
-          Castle.Core (>= 3.3.1)
-          log4net (1.2.10)
-        Castle.LoggingFacility (3.3.0)
-          Castle.Core (>= 3.3.0)
-          Castle.Windsor (>= 3.3.0)
-        Castle.Windsor (3.3.0)
-          Castle.Core (>= 3.3.0)
-        Castle.Windsor-log4net (3.3.0)
-          Castle.Core-log4net (>= 3.3.0)
-          Castle.LoggingFacility (>= 3.3.0)
         log4net (1.2.10)
-        NUnit (2.6.3)
+        Microsoft.Bcl (1.1.9)
+          Microsoft.Bcl.Build (>= 1.0.14)
+        Microsoft.Bcl.Async (1.0.168) - >= net40 < net45
+          Microsoft.Bcl (>= 1.1.8)
+        Microsoft.Bcl.Build (1.0.21)
+        Newtonsoft.Json (6.0.8)
+        NUnit (3.0.0-alpha-4)
+          Microsoft.Bcl.Async (>= 1.0.165) - >= net40 < net45
+        UnionArgParser (0.8.2)
+
+
 
 ***
 
