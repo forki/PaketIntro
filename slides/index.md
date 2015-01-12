@@ -183,10 +183,32 @@
 
     $ paket outdated
 
-- Lists all dependencies that have newer versions available
+- Lists all dependencies that have newer versions available:
 
 <br /><br />
 <img style="border: none" src="images/paket-outdated.png" alt="Paket outdated" /> 
+
+***
+
+### Updating packages
+
+
+    $ paket update
+
+- Recomputes `paket.lock` based on `paket.dependencies`
+- Updates all versions to the latest matching all restrictions 
+- Runs `paket install`
+
+***
+
+### Restoring packages
+
+
+    $ paket restore
+
+- Restores all direct and indirect dependencies
+- Will not change `paket.lock` file
+- Can be used for CI build or from inside Visual Studio
 
 ***
 
@@ -195,11 +217,11 @@
 
     $ paket convert-from-nuget
 
-- Finds all packages.config files
-  - Converts them to paket.references files
-  - Generates a paket.dependencies file with all dependencies
-  - Generates paket.lock file
-- Package restore process will be converted
+- Finds all `packages.config` files
+  - Converts them to `paket.references` files
+  - Generates `paket.dependencies` file
+  - Computes `paket.lock` file
+- Visual Studio package restore process will be converted
 - Runs `paket install`
 
 ***
@@ -216,16 +238,16 @@
 
 ***
 
-### Strict references
+### Bootstrapping
 
-    references strict
-    source https://nuget.org/api/v2
-    
-    nuget Newtonsoft.Json ~> 6.0
-    nuget UnionArgParser ~> 0.7
-
+- Don't commit `paket.exe` to your repository
+- Bootstrapper is available for [download](https://github.com/fsprojects/Paket/releases/latest)
+- Bootstrapper allows to download latest `paket.exe`
+- Can be used for CI build or from inside Visual Studio
 
 ***
 
-- Slides are made with [FsReveal](http://fsprojects.github.io/FsReveal/)
+### Thank you
+
+- Slides are made using [FsReveal](http://fsprojects.github.io/FsReveal/)
 - Send corrections to https://github.com/forki/PaketIntro
