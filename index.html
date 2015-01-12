@@ -554,6 +554,131 @@
 
 <section >
 
+<h3>Source code dependencies</h3>
+
+<ul>
+<li>Allow to reference plain source code files</li>
+<li>Available for:
+<ul>
+<li><a href="https://www.github.com">GitHub</a></li>
+<li><a href="https://gist.github.com/">GitHub gists</a></li>
+<li>HTTP resources</li>
+</ul></li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Source code dependencies</h3>
+
+<h4>GitHub sample (1)</h4>
+
+<ul>
+<li>Add dependency to the <code>paket.dependencies</code> file</li>
+</ul>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">github</span> <span class="i">forki</span><span class="o">/</span><span class="i">FsUnit</span> <span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span></pre>
+</td>
+</tr>
+</table>
+
+<ul>
+<li>Also add a file reference to a <code>paket.references</code> file</li>
+</ul>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">File</span><span class="o">:</span><span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span></pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Source code dependencies</h3>
+
+<h4>GitHub sample (2)</h4>
+
+<ul>
+<li><code>paket install</code> will add a new section to <code>paket.lock</code>:</li>
+</ul>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">GITHUB</span>
+  <span class="i">remote</span><span class="o">:</span> <span class="i">forki</span><span class="o">/</span><span class="i">FsUnit</span>
+  <span class="i">specs</span><span class="o">:</span>
+    <span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span> (<span class="n">7623fc13439f0e60bd05c1ed3b5f6dcb937fe468</span>)</pre>
+</td>
+</tr>
+</table>
+
+<ul>
+<li><code>paket install</code> will also add a reference to the project:</li>
+</ul>
+
+<br /><br />
+<img style="border: none" src="images/github_ref_default_link.png" alt="Source reference" /> 
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Getting help</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">$</span> <span class="i">paket</span> [<span class="i">command</span>] <span class="o">--</span><span class="i">help</span></pre>
+</td>
+</tr>
+</table>
+
+<ul>
+<li>Visit the <a href="http://fsprojects.github.io/Paket/">online documentation</a></li>
+<li>Create a <a href="https://github.com/fsprojects/Paket/issues">GitHub issue</a></li>
+<li>Follow <a href="https://twitter.com/PaketManager">PaketManager</a> on Twitter</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
 <h3>Thank you</h3>
 
 <ul>
