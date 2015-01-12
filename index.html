@@ -36,7 +36,8 @@
 </head>
 <body>
     <div class="reveal">
-        <div class="tip" id="fs1">namespace Microsoft.FSharp.Core</div>
+        <div class="tip" id="fs1">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
+<div class="tip" id="fs2">namespace Microsoft.FSharp.Core</div>
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
@@ -99,6 +100,54 @@
 <li>Which packages do we really need?</li>
 </ul>
 
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+<span class="l">18: </span>
+<span class="l">19: </span>
+<span class="l">20: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&lt;?</span><span class="i">xml</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">1</span><span class="s">.</span><span class="s">0</span><span class="s">&quot;</span> <span class="i">encoding</span><span class="o">=</span><span class="s">&quot;</span><span class="s">utf</span><span class="s">-</span><span class="s">8</span><span class="s">&quot;</span><span class="o">?&gt;</span>
+<span class="o">&lt;</span><span class="i">packages</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">Accord</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">2</span><span class="s">.</span><span class="s">14</span><span class="s">.</span><span class="s">0</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">Accord</span><span class="s">.</span><span class="s">Math</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">2</span><span class="s">.</span><span class="s">14</span><span class="s">.</span><span class="s">0</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">Accord</span><span class="s">.</span><span class="s">Neuro</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">2</span><span class="s">.</span><span class="s">14</span><span class="s">.</span><span class="s">0</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">AForge</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">2</span><span class="s">.</span><span class="s">2</span><span class="s">.</span><span class="s">5</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 5)" onmouseover="showTip(event, 'fs1', 5)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">AForge</span><span class="s">.</span><span class="s">Genetic</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">2</span><span class="s">.</span><span class="s">2</span><span class="s">.</span><span class="s">5</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 6)" onmouseover="showTip(event, 'fs1', 6)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">AForge</span><span class="s">.</span><span class="s">Math</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">2</span><span class="s">.</span><span class="s">2</span><span class="s">.</span><span class="s">5</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 7)" onmouseover="showTip(event, 'fs1', 7)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">AForge</span><span class="s">.</span><span class="s">Neuro</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">2</span><span class="s">.</span><span class="s">2</span><span class="s">.</span><span class="s">5</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 8)" onmouseover="showTip(event, 'fs1', 8)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">Deedle</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">1</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">1</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 9)" onmouseover="showTip(event, 'fs1', 9)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">Deedle</span><span class="s">.</span><span class="s">RPlugin</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">1</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">1</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 10)" onmouseover="showTip(event, 'fs1', 10)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">FSharp</span><span class="s">.</span><span class="s">Charting</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">0</span><span class="s">.</span><span class="s">90</span><span class="s">.</span><span class="s">6</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 11)" onmouseover="showTip(event, 'fs1', 11)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">FSharp</span><span class="s">.</span><span class="s">Data</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">2</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">9</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 12)" onmouseover="showTip(event, 'fs1', 12)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">FsLab</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">0</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">19</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 13)" onmouseover="showTip(event, 'fs1', 13)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">MathNet</span><span class="s">.</span><span class="s">Numerics</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">3</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">0</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 14)" onmouseover="showTip(event, 'fs1', 14)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">MathNet</span><span class="s">.</span><span class="s">Numerics</span><span class="s">.</span><span class="s">FSharp</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">3</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">0</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 15)" onmouseover="showTip(event, 'fs1', 15)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">R</span><span class="s">.</span><span class="s">NET</span><span class="s">.</span><span class="s">Community</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">1</span><span class="s">.</span><span class="s">5</span><span class="s">.</span><span class="s">15</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 16)" onmouseover="showTip(event, 'fs1', 16)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">R</span><span class="s">.</span><span class="s">NET</span><span class="s">.</span><span class="s">Community</span><span class="s">.</span><span class="s">FSharp</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">0</span><span class="s">.</span><span class="s">1</span><span class="s">.</span><span class="s">8</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="i">package</span> <span onmouseout="hideTip(event, 'fs1', 17)" onmouseover="showTip(event, 'fs1', 17)" class="i">id</span><span class="o">=</span><span class="s">&quot;</span><span class="s">RProvider</span><span class="s">&quot;</span> <span class="i">version</span><span class="o">=</span><span class="s">&quot;</span><span class="s">1</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">13</span><span class="s">&quot;</span> <span class="i">targetFramework</span><span class="o">=</span><span class="s">&quot;</span><span class="s">net45</span><span class="s">&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="i">packages</span><span class="o">&gt;</span></pre>
+</td>
+</tr>
+</table>
+
 </section>
 
 <section >
@@ -106,9 +155,36 @@
 <h3>Why another package manager?</h3>
 
 <ul>
-<li>If versions are conflicting, NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resolution.html">silently take the latest version</a></li>
+<li>NuGet puts the version no. in the path</li>
+<li>Updates requires manual work (at least if you use .fsx):</li>
 </ul>
 
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+<span class="l">9: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">Deedle</span><span class="s">.</span><span class="s">1</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">1</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">Deedle</span><span class="s">.</span><span class="s">RPlugin</span><span class="s">.</span><span class="s">1</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">1</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">FSharp</span><span class="s">.</span><span class="s">Charting</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">90</span><span class="s">.</span><span class="s">6</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">FSharp</span><span class="s">.</span><span class="s">Data</span><span class="s">.</span><span class="s">2</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">9</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">MathNet</span><span class="s">.</span><span class="s">Numerics</span><span class="s">.</span><span class="s">3</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">0</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">MathNet</span><span class="s">.</span><span class="s">Numerics</span><span class="s">.</span><span class="s">FSharp</span><span class="s">.</span><span class="s">3</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">0</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">RProvider</span><span class="s">.</span><span class="s">1</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">13</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">R</span><span class="s">.</span><span class="s">NET</span><span class="s">.</span><span class="s">Community</span><span class="s">.</span><span class="s">1</span><span class="s">.</span><span class="s">5</span><span class="s">.</span><span class="s">15</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span>
+<span class="prep">#I</span> <span class="s">&quot;</span><span class="s">packages</span><span class="s">/</span><span class="s">R</span><span class="s">.</span><span class="s">NET</span><span class="s">.</span><span class="s">Community</span><span class="s">.</span><span class="s">FSharp</span><span class="s">.</span><span class="s">0</span><span class="s">.</span><span class="s">1</span><span class="s">.</span><span class="s">8</span><span class="s">/</span><span class="s">lib</span><span class="s">/</span><span class="s">net40</span><span class="s">&quot;</span></pre>
+</td>
+</tr>
+</table>
+
 </section>
 
 <section >
@@ -116,10 +192,8 @@
 <h3>Why another package manager?</h3>
 
 <ul>
-<li>If versions are conflicting, 
-NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resolution.html">silently take latest</a></li>
-<li>NuGet puts the version no. in the path => updates are a nightmare</li>
-<li>NuGet doesn't allow to reference GitHub files</li>
+<li>NuGet doesn't allow to reference plain source files</li>
+<li>If you want to reuse code you have to create a package</li>
 </ul>
 
 </section>
@@ -134,9 +208,28 @@ NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resoluti
 
 <ul>
 <li>NuGet is open source, but managed by Microsoft</li>
-<li>Most changes are breaking</li>
+<li>Most changes are breaking (e.g. version no. in path)</li>
 <li>NuGet team made clear they won't accept these changes</li>
 </ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Paket file structure</h3>
+
+<ul>
+<li><code>paket.dependencies</code>: Global definition of dependencies</li>
+<li><code>paket.lock</code>: Currently used versions of all dependencies</li>
+<li><code>paket.references</code>: Dependency definition per project</li>
+</ul>
+
+<br /><br />
+<img style="border: none" src="images/structure.png" alt="Basic structure" /> 
 
 </section>
 
@@ -149,19 +242,8 @@ NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resoluti
 <h3>paket.dependencies</h3>
 
 <ul>
-<li>specifies rules regarding your application's dependencies:</li>
+<li>Specifies all direct dependencies:</li>
 </ul>
-
-<p>source <a href="https://nuget.org/api/v2">https://nuget.org/api/v2</a></p>
-
-<p>nuget Castle.Windsor-log4net ~> 3.2
-   nuget NUnit</p>
-
-</section>
-
-<section >
-
-<h3>Strict references</h3>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
@@ -169,14 +251,16 @@ NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resoluti
 <span class="l">3: </span>
 <span class="l">4: </span>
 <span class="l">5: </span>
+<span class="l">6: </span>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="i">references</span> <span class="i">strict</span>
 <span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
 
-<span class="i">nuget</span> <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span> <span class="o">~&gt;</span> <span class="n">6.0</span>
-<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">~&gt;</span> <span class="n">0.7</span></pre>
+<span class="i">nuget</span> <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span><span class="o">-</span><span class="i">log4net</span> <span class="o">~&gt;</span> <span class="n">3.2</span>   <span class="c">// &gt;= 3.2 </span>
+<span class="i">nuget</span> <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span>                 <span class="c">// any version</span>
+<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">1.7</span>           <span class="c">// 1.7 &lt;= x &lt; 2.0</span>
+<span class="i">nuget</span> <span class="i">NUnit</span> <span class="i">prerelease</span>                <span class="c">// any version incl. prereleases</span></pre>
 </td>
 </tr>
 </table>
@@ -215,17 +299,17 @@ NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resoluti
 <span class="i">NUGET</span>
   <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
   <span class="i">specs</span><span class="o">:</span>
-    <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Core</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
-    <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">Core</span><span class="o">-</span><span class="i">log4net</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
+    <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 18)" onmouseover="showTip(event, 'fs2', 18)" class="i">Core</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
+    <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 19)" onmouseover="showTip(event, 'fs2', 19)" class="i">Core</span><span class="o">-</span><span class="i">log4net</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
+      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 20)" onmouseover="showTip(event, 'fs2', 20)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
       <span class="i">log4net</span> (<span class="n">1.2</span><span class="o">.</span><span class="n">10</span>)
     <span class="i">Castle</span><span class="o">.</span><span class="i">LoggingFacility</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 4)" onmouseover="showTip(event, 'fs1', 4)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
+      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 21)" onmouseover="showTip(event, 'fs2', 21)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
       <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
     <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 5)" onmouseover="showTip(event, 'fs1', 5)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
+      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 22)" onmouseover="showTip(event, 'fs2', 22)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
     <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span><span class="o">-</span><span class="i">log4net</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 6)" onmouseover="showTip(event, 'fs1', 6)" class="i">Core</span><span class="o">-</span><span class="i">log4net</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
+      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 23)" onmouseover="showTip(event, 'fs2', 23)" class="i">Core</span><span class="o">-</span><span class="i">log4net</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
       <span class="i">Castle</span><span class="o">.</span><span class="i">LoggingFacility</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
     <span class="i">log4net</span> (<span class="n">1.2</span><span class="o">.</span><span class="n">10</span>)
     <span class="i">NUnit</span> (<span class="n">2.6</span><span class="o">.</span><span class="n">3</span>)</pre>
@@ -281,6 +365,34 @@ NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resoluti
 <li>package restore process will be converted</li>
 <li>installs all packages</li>
 </ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Strict references</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">references</span> <span class="i">strict</span>
+<span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+
+<span class="i">nuget</span> <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span> <span class="o">~&gt;</span> <span class="n">6.0</span>
+<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">~&gt;</span> <span class="n">0.7</span></pre>
+</td>
+</tr>
+</table>
 
 </section>
 
