@@ -411,11 +411,63 @@
 </table>
 
 <ul>
-<li>Lists all dependencies that have newer versions available</li>
+<li>Lists all dependencies that have newer versions available:</li>
 </ul>
 
 <br /><br />
 <img style="border: none" src="images/paket-outdated.png" alt="Paket outdated" /> 
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Updating packages</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">$</span> <span class="i">paket</span> <span class="i">update</span></pre>
+</td>
+</tr>
+</table>
+
+<ul>
+<li>Recomputes <code>paket.lock</code> based on <code>paket.dependencies</code></li>
+<li>Updates all versions to the latest matching all restrictions</li>
+<li>Runs <code>paket install</code></li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Restoring packages</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">$</span> <span class="i">paket</span> <span class="i">restore</span></pre>
+</td>
+</tr>
+</table>
+
+<ul>
+<li>Restores all direct and indirect dependencies</li>
+<li>Will not change <code>paket.lock</code> file</li>
+<li>Can be used for CI build or from inside Visual Studio</li>
+</ul>
 
 </section>
 
@@ -438,13 +490,13 @@
 </table>
 
 <ul>
-<li>Finds all packages.config files
+<li>Finds all <code>packages.config</code> files
 <ul>
-<li>Converts them to paket.references files</li>
-<li>Generates a paket.dependencies file with all dependencies</li>
-<li>Generates paket.lock file</li>
+<li>Converts them to <code>paket.references</code> files</li>
+<li>Generates <code>paket.dependencies</code> file</li>
+<li>Computes <code>paket.lock</code> file</li>
 </ul></li>
-<li>Package restore process will be converted</li>
+<li>Visual Studio package restore process will be converted</li>
 <li>Runs <code>paket install</code></li>
 </ul>
 
@@ -485,25 +537,14 @@
 
 <section >
 
-<h3>Strict references</h3>
+<h3>Bootstrapping</h3>
 
-<table class="pre"><tr><td class="lines"><pre class="fssnip">
-<span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-<span class="l">4: </span>
-<span class="l">5: </span>
-</pre>
-</td>
-<td class="snippet"><pre class="fssnip">
-<span class="i">references</span> <span class="i">strict</span>
-<span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
-
-<span class="i">nuget</span> <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span> <span class="o">~&gt;</span> <span class="n">6.0</span>
-<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">~&gt;</span> <span class="n">0.7</span></pre>
-</td>
-</tr>
-</table>
+<ul>
+<li>Don't commit <code>paket.exe</code> to your repository</li>
+<li>Bootstrapper is available for <a href="https://github.com/fsprojects/Paket/releases/latest">download</a></li>
+<li>Bootstrapper allows to download latest <code>paket.exe</code></li>
+<li>Can be used for CI build or from inside Visual Studio</li>
+</ul>
 
 </section>
 
@@ -511,10 +552,16 @@
 
 <section >
 
+<section >
+
+<h3>Thank you</h3>
+
 <ul>
-<li>Slides are made with <a href="http://fsprojects.github.io/FsReveal/">FsReveal</a></li>
+<li>Slides are made using <a href="http://fsprojects.github.io/FsReveal/">FsReveal</a></li>
 <li>Send corrections to <a href="https://github.com/forki/PaketIntro">https://github.com/forki/PaketIntro</a></li>
 </ul>
+
+</section>
 
 </section>
 
