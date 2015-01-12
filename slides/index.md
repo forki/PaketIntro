@@ -27,19 +27,32 @@
 
 ### Why don't you contribute to NuGet?
 
-- Things like the removement of the version no. from the path are breaking 
-- NuGet made clear they won't accept these changes
+- NuGet is open source, but managed by Microsoft
+- Most changes are breaking 
+- NuGet team made clear they won't accept these changes 
 
 ***
 
 ### paket.dependencies
 
+- specifies rules regarding your application's dependencies:
 
 
+
+   source https://nuget.org/api/v2
+   
+   nuget Castle.Windsor-log4net ~> 3.2
+   nuget NUnit
+    
+---
+
+### Strict references
+
+    references strict
     source https://nuget.org/api/v2
     
-    nuget Castle.Windsor-log4net ~> 3.2
-    nuget NUnit
+    nuget Newtonsoft.Json ~> 6.0
+    nuget UnionArgParser ~> 0.7
 
 ***
 
