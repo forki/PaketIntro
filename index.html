@@ -51,7 +51,8 @@
 <li>Allows to include NuGet packages and GitHub files</li>
 </ul>
 
-<p><img src="images/logo.png" alt="Logo" /></p>
+<br /><br />
+<img style="border: none" src="images/logo.png" alt="Paket logo" /> 
 
 </section>
 
@@ -64,9 +65,59 @@
 <h3>Why another package manager?</h3>
 
 <ul>
+<li>.NET ecosystem has already NuGet</li>
+<li>Integrated in Visual Studio and Xamarin Studio</li>
+<li><a href="https://www.nuget.org/">nuget.org</a> is etablished package feed</li>
+</ul>
+
+<br /><br />
+<img style="border: none" src="images/nuget.png" alt="Nuget logo" /> 
+
+</section>
+
+<section >
+
+<h3>Why another package manager?</h3>
+
+<ul>
 <li>NuGet has no global view of your dependencies</li>
+<li><code>packages.config</code> files are spread over all project folders</li>
+<li>As a sample <a href="https://github.com/MassTransit/MassTransit">MassTransit</a>:</li>
+</ul>
+
+<br /><br />
+<img style="border: none" src="images/MassTransit.png" alt="packages.config everywhere" /> 
+
+</section>
+
+<section >
+
+<h3>Why another package manager?</h3>
+
+<ul>
 <li>NuGet has no concept of indirect dependencies</li>
+<li>Which packages do we really need?</li>
+</ul>
+
+</section>
+
+<section >
+
+<h3>Why another package manager?</h3>
+
+<ul>
 <li>If versions are conflicting, NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resolution.html">silently take the latest version</a></li>
+</ul>
+
+</section>
+
+<section >
+
+<h3>Why another package manager?</h3>
+
+<ul>
+<li>If versions are conflicting, 
+NuGet will <a href="http://fsprojects.github.io/Paket/controlling-nuget-resolution.html">silently take latest</a></li>
 <li>NuGet puts the version no. in the path => updates are a nightmare</li>
 <li>NuGet doesn't allow to reference GitHub files</li>
 </ul>
@@ -238,7 +289,8 @@
 <section >
 
 <ul>
-<li>Slides can be found at: <a href="https://github.com/forki/PaketIntro">https://github.com/forki/PaketIntro</a></li>
+<li>Slides are made with <a href="http://fsprojects.github.io/FsReveal/">FsReveal</a></li>
+<li>Send corrections to <a href="https://github.com/forki/PaketIntro">https://github.com/forki/PaketIntro</a></li>
 </ul>
 
 </section>
@@ -259,7 +311,7 @@
             history: true,
             center: true,
 
-            theme: 'night', // available themes are in /css/theme
+            theme: 'sky', // available themes are in /css/theme
             transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
 
             // Parallax scrolling
