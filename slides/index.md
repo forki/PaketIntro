@@ -247,6 +247,62 @@
 
 ***
 
+### Source code dependencies
+
+- Allow to reference plain source code files
+- Available for: 
+  - [GitHub](https://www.github.com)
+  - [GitHub gists](https://gist.github.com/)
+  - HTTP resources
+  
+***
+
+### Source code dependencies
+#### GitHub sample (1)
+
+- Add dependency to the `paket.dependencies` file 
+
+
+    github forki/FsUnit FsUnit.fs
+    
+- Also add a file reference to a `paket.references` file 
+
+
+    File:FsUnit.fs
+
+***
+
+### Source code dependencies 
+#### GitHub sample (2)
+
+- `paket install` will add a new section to `paket.lock`:
+
+
+    GITHUB
+      remote: forki/FsUnit
+      specs:
+        FsUnit.fs (7623fc13439f0e60bd05c1ed3b5f6dcb937fe468)
+
+- `paket install` will also add a reference to the project:
+
+
+<br /><br />
+<img style="border: none" src="images/github_ref_default_link.png" alt="Source reference" /> 
+       
+
+***
+
+### Getting help
+
+
+    $ paket [command] --help
+
+- Visit the [online documentation](http://fsprojects.github.io/Paket/)
+- Create a [GitHub issue](https://github.com/fsprojects/Paket/issues)
+- Follow [PaketManager](https://twitter.com/PaketManager) on Twitter
+
+***
+
 ### Thank you
 
 - Slides are made using [FsReveal](http://fsprojects.github.io/FsReveal/)
