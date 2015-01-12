@@ -60,7 +60,7 @@ let generateFor (file:FileInfo) =
 
 let handleWatcherEvents (e:FileSystemEventArgs) =
     let fi = fileInfo e.FullPath 
-    traceImportant "%s was changed." fi.Name
+    traceImportant <| sprintf "%s was changed." fi.Name
     match fi.Attributes.HasFlag FileAttributes.Hidden || fi.Attributes.HasFlag FileAttributes.Directory with
             | true -> ()
             | _ -> generateFor fi
