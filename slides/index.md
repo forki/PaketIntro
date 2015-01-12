@@ -45,23 +45,51 @@
 - Which packages do we really need?
 
 
+    <?xml version="1.0" encoding="utf-8"?>
+    <packages>
+      <package id="Accord" version="2.14.0" targetFramework="net45" />
+      <package id="Accord.Math" version="2.14.0" targetFramework="net45" />
+      <package id="Accord.Neuro" version="2.14.0" targetFramework="net45" />
+      <package id="AForge" version="2.2.5" targetFramework="net45" />
+      <package id="AForge.Genetic" version="2.2.5" targetFramework="net45" />
+      <package id="AForge.Math" version="2.2.5" targetFramework="net45" />
+      <package id="AForge.Neuro" version="2.2.5" targetFramework="net45" />
+      <package id="Deedle" version="1.0.1" targetFramework="net45" />
+      <package id="Deedle.RPlugin" version="1.0.1" targetFramework="net45" />
+      <package id="FSharp.Charting" version="0.90.6" targetFramework="net45" />
+      <package id="FSharp.Data" version="2.0.9" targetFramework="net45" />
+      <package id="FsLab" version="0.0.19" targetFramework="net45" />
+      <package id="MathNet.Numerics" version="3.0.0" targetFramework="net45" />
+      <package id="MathNet.Numerics.FSharp" version="3.0.0" targetFramework="net45" />
+      <package id="R.NET.Community" version="1.5.15" targetFramework="net45" />
+      <package id="R.NET.Community.FSharp" version="0.1.8" targetFramework="net45" />
+      <package id="RProvider" version="1.0.13" targetFramework="net45" />
+    </packages>
 
 --- 
 
 ### Why another package manager?
 
-- If versions are conflicting, NuGet will [silently take the latest version](http://fsprojects.github.io/Paket/controlling-nuget-resolution.html)
+- NuGet puts the version no. in the path
+- Updates requires manual work (at least if you use .fsx):
 
 
+    #I "packages/Deedle.1.0.1/lib/net40"
+    #I "packages/Deedle.RPlugin.1.0.1/lib/net40"
+    #I "packages/FSharp.Charting.0.90.6/lib/net40"
+    #I "packages/FSharp.Data.2.0.9/lib/net40"
+    #I "packages/MathNet.Numerics.3.0.0/lib/net40"
+    #I "packages/MathNet.Numerics.FSharp.3.0.0/lib/net40"
+    #I "packages/RProvider.1.0.13/lib/net40"
+    #I "packages/R.NET.Community.1.5.15/lib/net40"
+    #I "packages/R.NET.Community.FSharp.0.1.8/lib/net40"
 
---- 
+---
 
 ### Why another package manager?
 
-- If versions are conflicting, 
-    NuGet will [silently take latest](http://fsprojects.github.io/Paket/controlling-nuget-resolution.html)
-- NuGet puts the version no. in the path => updates are a nightmare
-- NuGet doesn't allow to reference GitHub files
+- NuGet doesn't allow to reference plain source files
+- If you want to reuse code you have to create a package
 
 
 ***
@@ -69,31 +97,35 @@
 ### Why don't you contribute to NuGet?
 
 - NuGet is open source, but managed by Microsoft
-- Most changes are breaking 
-- NuGet team made clear they won't accept these changes 
+- Most changes are breaking (e.g. version no. in path) 
+- NuGet team made clear they won't accept these changes
+
+***
+
+### Paket file structure
+
+- `paket.dependencies`: Global definition of dependencies
+- `paket.lock`: Currently used versions of all dependencies
+- `paket.references`: Dependency definition per project
+
+
+<br /><br />
+<img style="border: none" src="images/structure.png" alt="Basic structure" /> 
 
 ***
 
 ### paket.dependencies
 
-- specifies rules regarding your application's dependencies:
+- Specifies all direct dependencies:
 
 
-
-   source https://nuget.org/api/v2
-   
-   nuget Castle.Windsor-log4net ~> 3.2
-   nuget NUnit
+     source https://nuget.org/api/v2
+     
+     nuget Castle.Windsor-log4net ~> 3.2   // >= 3.2 
+     nuget Newtonsoft.Json                 // any version
+     nuget UnionArgParser >= 1.7           // 1.7 <= x < 2.0
+     nuget NUnit prerelease                // any version incl. prereleases
     
----
-
-### Strict references
-
-    references strict
-    source https://nuget.org/api/v2
-    
-    nuget Newtonsoft.Json ~> 6.0
-    nuget UnionArgParser ~> 0.7
 
 ***
 
@@ -141,6 +173,18 @@
   - generates paket.lock file
 - package restore process will be converted
 - installs all packages
+
+
+***
+
+### Strict references
+
+    references strict
+    source https://nuget.org/api/v2
+    
+    nuget Newtonsoft.Json ~> 6.0
+    nuget UnionArgParser ~> 0.7
+
 
 ***
 
