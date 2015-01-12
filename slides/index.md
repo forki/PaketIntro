@@ -1,7 +1,7 @@
 - title : Paket
 - description : Introduction to Paket
 - author : Steffen Forkmann
-- theme : night
+- theme : sky
 - transition : default
 
 ***
@@ -11,17 +11,35 @@
 - Dependency manager for .NET and Mono projects
 - Allows to include NuGet packages and GitHub files
 
-![Logo](images/logo.png) 
+<br /><br />
+<img style="border: none" src="images/logo.png" alt="Paket logo" /> 
 
 ***
 
 ### Why another package manager?
 
+- .NET ecosystem has already NuGet
+- Integrated in Visual Studio and Xamarin Studio
+- [nuget.org](https://www.nuget.org/) is etablished package feed
+
+--- 
+
+### Why another package manager? (2)
+
 - NuGet has no global view of your dependencies
 - NuGet has no concept of indirect dependencies
-- If versions are conflicting, NuGet will [silently take the latest version](http://fsprojects.github.io/Paket/controlling-nuget-resolution.html)
+- If versions are conflicting, 
+    NuGet will [silently take latest](http://fsprojects.github.io/Paket/controlling-nuget-resolution.html)
 - NuGet puts the version no. in the path => updates are a nightmare
 - NuGet doesn't allow to reference GitHub files
+
+--- 
+
+### Why another package manager? (2)
+
+- NuGet has no global view of your dependencies
+- `packges.config` files are littered over all projects
+
 
 ***
 
