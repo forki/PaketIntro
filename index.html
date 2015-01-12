@@ -37,7 +37,6 @@
 <body>
     <div class="reveal">
         <div class="tip" id="fs1">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
-<div class="tip" id="fs2">namespace Microsoft.FSharp.Core</div>
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
@@ -224,7 +223,7 @@
 
 <ul>
 <li><code>paket.dependencies</code>: Global definition of dependencies</li>
-<li><code>paket.lock</code>: Currently used versions of all dependencies</li>
+<li><code>paket.lock</code>: Concretely used versions of all dependencies</li>
 <li><code>paket.references</code>: Dependency definition per project</li>
 </ul>
 
@@ -275,47 +274,28 @@
 
 <h3>paket.lock</h3>
 
-<table class="pre"><tr><td class="lines"><pre class="fssnip">
-<span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
-<span class="l">11: </span>
-<span class="l">12: </span>
-<span class="l">13: </span>
-<span class="l">14: </span>
-<span class="l">15: </span>
-<span class="l">16: </span>
-<span class="l">17: </span>
-</pre>
-</td>
-<td class="snippet"><pre class="fssnip">
-<span class="i">NUGET</span>
-  <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
-  <span class="i">specs</span><span class="o">:</span>
-    <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 18)" onmouseover="showTip(event, 'fs2', 18)" class="i">Core</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
-    <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 19)" onmouseover="showTip(event, 'fs2', 19)" class="i">Core</span><span class="o">-</span><span class="i">log4net</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 20)" onmouseover="showTip(event, 'fs2', 20)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">1</span>)
-      <span class="i">log4net</span> (<span class="n">1.2</span><span class="o">.</span><span class="n">10</span>)
-    <span class="i">Castle</span><span class="o">.</span><span class="i">LoggingFacility</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 21)" onmouseover="showTip(event, 'fs2', 21)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-    <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 22)" onmouseover="showTip(event, 'fs2', 22)" class="i">Core</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-    <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span><span class="o">-</span><span class="i">log4net</span> (<span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 23)" onmouseover="showTip(event, 'fs2', 23)" class="i">Core</span><span class="o">-</span><span class="i">log4net</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-      <span class="i">Castle</span><span class="o">.</span><span class="i">LoggingFacility</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">3.3</span><span class="o">.</span><span class="n">0</span>)
-    <span class="i">log4net</span> (<span class="n">1.2</span><span class="o">.</span><span class="n">10</span>)
-    <span class="i">NUnit</span> (<span class="n">2.6</span><span class="o">.</span><span class="n">3</span>)</pre>
-</td>
-</tr>
-</table>
+<ul>
+<li>Specifies all direct dependencies:
+
+  NUGET
+    remote: <a href="https://nuget.org/api/v2
+">https://nuget.org/api/v2
+</a>    specs:
+      Castle.Core (3.3.1)
+      Castle.Core-log4net (3.3.1)
+        Castle.Core (>= 3.3.1)
+        log4net (1.2.10)
+      Castle.LoggingFacility (3.3.0)
+        Castle.Core (>= 3.3.0)
+        Castle.Windsor (>= 3.3.0)
+      Castle.Windsor (3.3.0)
+        Castle.Core (>= 3.3.0)
+      Castle.Windsor-log4net (3.3.0)
+        Castle.Core-log4net (>= 3.3.0)
+        Castle.LoggingFacility (>= 3.3.0)
+      log4net (1.2.10)
+      NUnit (2.6.3)</li>
+</ul>
 
 </section>
 
