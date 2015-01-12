@@ -22,23 +22,46 @@
 - Integrated in Visual Studio and Xamarin Studio
 - [nuget.org](https://www.nuget.org/) is etablished package feed
 
+<br /><br />
+<img style="border: none" src="images/nuget.png" alt="Nuget logo" /> 
+
 --- 
 
-### Why another package manager? (2)
+### Why another package manager?
 
 - NuGet has no global view of your dependencies
+- `packages.config` files are spread over all project folders
+- As a sample [MassTransit](https://github.com/MassTransit/MassTransit):
+
+
+<br /><br />
+<img style="border: none" src="images/MassTransit.png" alt="packages.config everywhere" /> 
+
+--- 
+
+### Why another package manager?
+
 - NuGet has no concept of indirect dependencies
+- Which packages do we really need?
+
+
+
+--- 
+
+### Why another package manager?
+
+- If versions are conflicting, NuGet will [silently take the latest version](http://fsprojects.github.io/Paket/controlling-nuget-resolution.html)
+
+
+
+--- 
+
+### Why another package manager?
+
 - If versions are conflicting, 
     NuGet will [silently take latest](http://fsprojects.github.io/Paket/controlling-nuget-resolution.html)
 - NuGet puts the version no. in the path => updates are a nightmare
 - NuGet doesn't allow to reference GitHub files
-
---- 
-
-### Why another package manager? (2)
-
-- NuGet has no global view of your dependencies
-- `packges.config` files are littered over all projects
 
 
 ***
@@ -121,4 +144,5 @@
 
 ***
 
-- Slides can be found at: https://github.com/forki/PaketIntro
+- Slides are made with [FsReveal](http://fsprojects.github.io/FsReveal/)
+- Send corrections to https://github.com/forki/PaketIntro
