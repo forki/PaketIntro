@@ -42,6 +42,8 @@
         <div class="slides">
             <section >
 
+<section >
+
 <h3>What is Paket?</h3>
 
 <ul>
@@ -52,6 +54,10 @@
 <p><img src="images/logo.png" alt="Logo" /></p>
 
 </section>
+
+</section>
+
+<section >
 
 <section >
 
@@ -67,38 +73,68 @@
 
 </section>
 
+</section>
+
+<section >
+
 <section >
 
 <h3>Why don't you contribute to NuGet?</h3>
 
 <ul>
-<li>Things like the removement of the version no. from the path are breaking</li>
-<li>NuGet made clear they won't accept these changes</li>
+<li>NuGet is open source, but managed by Microsoft</li>
+<li>Most changes are breaking</li>
+<li>NuGet team made clear they won't accept these changes</li>
 </ul>
+
+</section>
 
 </section>
 
 <section >
 
+<section >
+
 <h3>paket.dependencies</h3>
+
+<ul>
+<li>specifies rules regarding your application's dependencies:</li>
+</ul>
+
+<p>source <a href="https://nuget.org/api/v2">https://nuget.org/api/v2</a></p>
+
+<p>nuget Castle.Windsor-log4net ~> 3.2
+   nuget NUnit</p>
+
+</section>
+
+<section >
+
+<h3>Strict references</h3>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
+<span class="l">5: </span>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
+<span class="i">references</span> <span class="i">strict</span>
 <span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
 
-<span class="i">nuget</span> <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span><span class="o">-</span><span class="i">log4net</span> <span class="o">~&gt;</span> <span class="n">3.2</span>
-<span class="i">nuget</span> <span class="i">NUnit</span></pre>
+<span class="i">nuget</span> <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span> <span class="o">~&gt;</span> <span class="n">6.0</span>
+<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">~&gt;</span> <span class="n">0.7</span></pre>
 </td>
 </tr>
 </table>
 
 </section>
+
+</section>
+
+<section >
 
 <section >
 
@@ -148,6 +184,10 @@
 
 </section>
 
+</section>
+
+<section >
+
 <section >
 
 <h3>paket.references</h3>
@@ -170,6 +210,10 @@
 
 </section>
 
+</section>
+
+<section >
+
 <section >
 
 <h4>Convert from NuGet</h4>
@@ -186,6 +230,8 @@
 <li>package restore process will be converted</li>
 <li>installs all packages</li>
 </ul>
+
+</section>
 
 </section>
 
