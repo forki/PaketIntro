@@ -37,6 +37,8 @@
 <body>
     <div class="reveal">
         <div class="tip" id="fs1">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
+<div class="tip" id="fs2">namespace Microsoft</div>
+<div class="tip" id="fs3">Multiple items<br />type Async<br />static member AsBeginEnd : computation:(&#39;Arg -&gt; Async&lt;&#39;T&gt;) -&gt; (&#39;Arg * AsyncCallback * obj -&gt; IAsyncResult) * (IAsyncResult -&gt; &#39;T) * (IAsyncResult -&gt; unit)<br />static member AwaitEvent : event:IEvent&lt;&#39;Del,&#39;T&gt; * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt; (requires delegate and &#39;Del :&gt; Delegate)<br />static member AwaitIAsyncResult : iar:IAsyncResult * ?millisecondsTimeout:int -&gt; Async&lt;bool&gt;<br />static member AwaitTask : task:Task&lt;&#39;T&gt; -&gt; Async&lt;&#39;T&gt;<br />static member AwaitWaitHandle : waitHandle:WaitHandle * ?millisecondsTimeout:int -&gt; Async&lt;bool&gt;<br />static member CancelDefaultToken : unit -&gt; unit<br />static member Catch : computation:Async&lt;&#39;T&gt; -&gt; Async&lt;Choice&lt;&#39;T,exn&gt;&gt;<br />static member FromBeginEnd : beginAction:(AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member FromBeginEnd : arg:&#39;Arg1 * beginAction:(&#39;Arg1 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member FromBeginEnd : arg1:&#39;Arg1 * arg2:&#39;Arg2 * beginAction:(&#39;Arg1 * &#39;Arg2 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member FromBeginEnd : arg1:&#39;Arg1 * arg2:&#39;Arg2 * arg3:&#39;Arg3 * beginAction:(&#39;Arg1 * &#39;Arg2 * &#39;Arg3 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member FromContinuations : callback:((&#39;T -&gt; unit) * (exn -&gt; unit) * (OperationCanceledException -&gt; unit) -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member Ignore : computation:Async&lt;&#39;T&gt; -&gt; Async&lt;unit&gt;<br />static member OnCancel : interruption:(unit -&gt; unit) -&gt; Async&lt;IDisposable&gt;<br />static member Parallel : computations:seq&lt;Async&lt;&#39;T&gt;&gt; -&gt; Async&lt;&#39;T []&gt;<br />static member RunSynchronously : computation:Async&lt;&#39;T&gt; * ?timeout:int * ?cancellationToken:CancellationToken -&gt; &#39;T<br />static member Sleep : millisecondsDueTime:int -&gt; Async&lt;unit&gt;<br />static member Start : computation:Async&lt;unit&gt; * ?cancellationToken:CancellationToken -&gt; unit<br />static member StartAsTask : computation:Async&lt;&#39;T&gt; * ?taskCreationOptions:TaskCreationOptions * ?cancellationToken:CancellationToken -&gt; Task&lt;&#39;T&gt;<br />static member StartChild : computation:Async&lt;&#39;T&gt; * ?millisecondsTimeout:int -&gt; Async&lt;Async&lt;&#39;T&gt;&gt;<br />static member StartChildAsTask : computation:Async&lt;&#39;T&gt; * ?taskCreationOptions:TaskCreationOptions -&gt; Async&lt;Task&lt;&#39;T&gt;&gt;<br />static member StartImmediate : computation:Async&lt;unit&gt; * ?cancellationToken:CancellationToken -&gt; unit<br />static member StartWithContinuations : computation:Async&lt;&#39;T&gt; * continuation:(&#39;T -&gt; unit) * exceptionContinuation:(exn -&gt; unit) * cancellationContinuation:(OperationCanceledException -&gt; unit) * ?cancellationToken:CancellationToken -&gt; unit<br />static member SwitchToContext : syncContext:SynchronizationContext -&gt; Async&lt;unit&gt;<br />static member SwitchToNewThread : unit -&gt; Async&lt;unit&gt;<br />static member SwitchToThreadPool : unit -&gt; Async&lt;unit&gt;<br />static member TryCancelled : computation:Async&lt;&#39;T&gt; * compensation:(OperationCanceledException -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member CancellationToken : Async&lt;CancellationToken&gt;<br />static member DefaultCancellationToken : CancellationToken<br /><br />Full name: Microsoft.FSharp.Control.Async<br /><br />--------------------<br />type Async&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Control.Async&lt;_&gt;</div>
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
@@ -256,10 +258,10 @@
 <td class="snippet"><pre class="fssnip">
 <span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
 
-<span class="i">nuget</span> <span class="i">Castle</span><span class="o">.</span><span class="i">Windsor</span><span class="o">-</span><span class="i">log4net</span> <span class="o">~&gt;</span> <span class="n">3.2</span>   <span class="c">// &gt;= 3.2 </span>
-<span class="i">nuget</span> <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span>                 <span class="c">// any version</span>
-<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">1.7</span>           <span class="c">// 1.7 &lt;= x &lt; 2.0</span>
-<span class="i">nuget</span> <span class="i">NUnit</span> <span class="i">prerelease</span>                <span class="c">// any version incl. prereleases</span></pre>
+<span class="i">nuget</span> <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span>         <span class="c">// any version</span>
+<span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">0.7</span>   <span class="c">// x &gt;= 0.7</span>
+<span class="i">nuget</span> <span class="i">log4net</span> <span class="o">~&gt;</span> <span class="n">1.2</span>          <span class="c">// 1.2 &lt;= x &lt; 2     </span>
+<span class="i">nuget</span> <span class="i">NUnit</span> <span class="i">prerelease</span>        <span class="c">// any version incl. prereleases</span></pre>
 </td>
 </tr>
 </table>
@@ -275,27 +277,43 @@
 <h3>paket.lock</h3>
 
 <ul>
-<li>Specifies all direct dependencies:
-
-  NUGET
-    remote: <a href="https://nuget.org/api/v2
-">https://nuget.org/api/v2
-</a>    specs:
-      Castle.Core (3.3.1)
-      Castle.Core-log4net (3.3.1)
-        Castle.Core (>= 3.3.1)
-        log4net (1.2.10)
-      Castle.LoggingFacility (3.3.0)
-        Castle.Core (>= 3.3.0)
-        Castle.Windsor (>= 3.3.0)
-      Castle.Windsor (3.3.0)
-        Castle.Core (>= 3.3.0)
-      Castle.Windsor-log4net (3.3.0)
-        Castle.Core-log4net (>= 3.3.0)
-        Castle.LoggingFacility (>= 3.3.0)
-      log4net (1.2.10)
-      NUnit (2.6.3)</li>
+<li>Graph of used versions for all dependencies</li>
+<li>Automatically computed from <code>paket.dependencies</code></li>
 </ul>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">NUGET</span>
+  <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
+  <span class="i">specs</span><span class="o">:</span>
+    <span class="i">log4net</span> (<span class="n">1.2</span><span class="o">.</span><span class="n">10</span>)
+    <span onmouseout="hideTip(event, 'fs2', 18)" onmouseover="showTip(event, 'fs2', 18)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span> (<span class="n">1.1</span><span class="o">.</span><span class="n">9</span>)
+      <span onmouseout="hideTip(event, 'fs2', 19)" onmouseover="showTip(event, 'fs2', 19)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.0</span><span class="o">.</span><span class="n">14</span>)
+    <span onmouseout="hideTip(event, 'fs2', 20)" onmouseover="showTip(event, 'fs2', 20)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 21)" onmouseover="showTip(event, 'fs3', 21)" class="i">Async</span> (<span class="n">1.0</span><span class="o">.</span><span class="n">168</span>) <span class="o">-</span> <span class="o">&gt;</span><span class="o">=</span> <span class="i">net40</span> <span class="o">&lt;</span> <span class="i">net45</span>
+      <span onmouseout="hideTip(event, 'fs2', 22)" onmouseover="showTip(event, 'fs2', 22)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.1</span><span class="o">.</span><span class="n">8</span>)
+    <span onmouseout="hideTip(event, 'fs2', 23)" onmouseover="showTip(event, 'fs2', 23)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="n">1.0</span><span class="o">.</span><span class="n">21</span>)
+    <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span> (<span class="n">6.0</span><span class="o">.</span><span class="n">8</span>)
+    <span class="i">NUnit</span> (<span class="n">3.0</span><span class="o">.</span><span class="n">0</span><span class="o">-</span><span class="i">alpha</span><span class="o">-</span><span class="n">4</span>)
+      <span onmouseout="hideTip(event, 'fs2', 24)" onmouseover="showTip(event, 'fs2', 24)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 25)" onmouseover="showTip(event, 'fs3', 25)" class="i">Async</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.0</span><span class="o">.</span><span class="n">165</span>) <span class="o">-</span> <span class="o">&gt;</span><span class="o">=</span> <span class="i">net40</span> <span class="o">&lt;</span> <span class="i">net45</span>
+    <span class="i">UnionArgParser</span> (<span class="n">0.8</span><span class="o">.</span><span class="n">2</span>)</pre>
+</td>
+</tr>
+</table>
 
 </section>
 
