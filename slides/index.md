@@ -116,7 +116,8 @@
 
 ### paket.dependencies
 
-- Specifies all direct dependencies:
+- Specifies all direct dependencies
+- Manually editable (or via paket.exe commands)
 
 
      source https://nuget.org/api/v2
@@ -132,6 +133,7 @@
 ### paket.lock
 
 - Graph of used versions for all dependencies
+- Compareable to a unified view of all `packages.config`
 - Automatically computed from `paket.dependencies`:
 
 
@@ -149,33 +151,68 @@
           Microsoft.Bcl.Async (>= 1.0.165) - >= net40 < net45
         UnionArgParser (0.8.2)
 
-
-
 ***
 
 ### paket.references
 
+- Specifies which dependencies are used in a given project
+- Compareable to `packages.config`, but without versions
+- Only direct dependencies need to  be listed
+- Manually editable
+
+
     Newtonsoft.Json
     UnionArgParser
-    DotNetZip
-    RestSharp
-
+    NUnit
 
 ***
 
-#### Convert from NuGet
+### Installing packages
 
-- Automatic converter available
+
+    $ paket install
+
+- Computes `paket.lock` based on `paket.dependencies`
+- Restores all direct and indirect dependencies
+- Processes all projects and adds references to the libraries
+
+***
+
+### Checking for updates
+
+
+    $ paket outdated
+
+- Lists all dependencies that have newer versions available
+
+<br /><br />
+<img style="border: none" src="images/paket-outdated.png" alt="Paket outdated" /> 
+
+***
+
+### Convert from NuGet
+
 
     $ paket convert-from-nuget
 
-- finds all packages.config files
-  - converts them to paket.references files
-  - generates a paket.dependencies file with all dependencies
-  - generates paket.lock file
-- package restore process will be converted
-- installs all packages
+- Finds all packages.config files
+  - Converts them to paket.references files
+  - Generates a paket.dependencies file with all dependencies
+  - Generates paket.lock file
+- Package restore process will be converted
+- Runs `paket install`
 
+***
+
+### Simplify dependencies
+
+
+    $ paket simplify
+
+- Computes indirect dependencies from `paket.lock` file  
+  - Removes these from `paket.dependencies`
+  - Removes these `paket.references`
+- Especially useful after conversion from NuGet ([Sample](http://fsprojects.github.io/Paket/paket-simplify.html#Sample))
 
 ***
 
