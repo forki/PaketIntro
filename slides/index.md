@@ -106,6 +106,7 @@
 
 - Integrate well into the existing NuGet ecosystem
 - Make things work with minimal tooling (plain text files)
+- Make it work on all platforms
 - Automate everything
 - Create a nice community
 
@@ -294,9 +295,29 @@
 
 - `paket install` will also add a reference to the project:
 
-
 <br /><br />
-<img style="border: none" src="images/github_ref_default_link.png" alt="Source reference" /> 
+<img style="border: none" src="images/github_ref_default_link.png" alt="Source reference" />
+
+***
+
+### Source code dependencies 
+#### Use case - "Type Provider definition"
+
+- For F# Type Providers you need a couple of helper files
+- It was painful to keep these up-to-date
+- Reference F# Type Provider files in `paket.dependencies`:
+
+
+    github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fsi
+    github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fs
+    github fsprojects/FSharp.TypeProviders.StarterPack src/DebugProvidedTypes.fs
+
+- Add the files to the Type Providers's `paket.references`:
+
+
+    File:ProvidedTypes.fsi
+    File:ProvidedTypes.fs
+    File:DebugProvidedTypes.fs 
        
 
 ***
@@ -309,6 +330,26 @@
 - Visit the [online documentation](http://fsprojects.github.io/Paket/)
 - Create a [GitHub issue](https://github.com/fsprojects/Paket/issues)
 - Follow [PaketManager](https://twitter.com/PaketManager) on Twitter
+
+
+***
+
+### ProjectScaffold
+
+- Used to initialialize a prototypical .NET/mono solution
+- This includes Paket and a FAKE build process that:
+  - allows a simple one step build and release process
+  - works with most build servers
+  - compiles the application and runs all test projects
+  - synchronizes all AssemblyInfo files prior to compilation
+  - generates API docs based on XML documentation tags
+  - generates documentation based on Markdown files
+  - generates and pushes NuGet packages
+- http://fsprojects.github.io/ProjectScaffold/
+
+
+<br /><br />
+<img src="images/projectscaffold-logo.png" alt="ProjectScaffold" /> 
 
 ***
 
@@ -325,5 +366,7 @@
 
 ### Thank you
 
-- Slides are made using [FsReveal](http://fsprojects.github.io/FsReveal/)
+- Take a look at https://github.com/fsprojects/Paket
+- We take contributions!
+- Slides are MIT licensed and made using [FsReveal](http://fsprojects.github.io/FsReveal/)
 - Send corrections to https://github.com/forki/PaketIntro
