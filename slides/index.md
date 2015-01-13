@@ -1,7 +1,7 @@
 - title : Paket
 - description : Introduction to Paket
 - author : Steffen Forkmann
-- theme : sky
+- theme : night
 - transition : default
 
 ***
