@@ -102,6 +102,15 @@
 
 ***
 
+### Paket - Project Principles
+
+- Integrate well into the existing NuGet ecosystem
+- Make things work with minimal tooling (plain text files)
+- Automate everything
+- Create a nice community
+
+***
+
 ### Paket file structure
 
 - `paket.dependencies`: Global definition of dependencies
@@ -300,6 +309,17 @@
 - Visit the [online documentation](http://fsprojects.github.io/Paket/)
 - Create a [GitHub issue](https://github.com/fsprojects/Paket/issues)
 - Follow [PaketManager](https://twitter.com/PaketManager) on Twitter
+
+***
+
+### Paket.VisualStudio
+
+- Alpha version of [VisualStudio plugin](https://github.com/hmemcpy/Paket.VisualStudio)
+- Takes contributions
+
+
+<br /><br />
+<img style="border: none" src="images/Paket.VisualStudio.png" alt="Paket.VisualStudio" /> 
 
 ***
 
