@@ -8,8 +8,9 @@
 
 ### What is Paket?
 
-- Dependency manager for .NET and Mono projects
-- Allows to include NuGet packages and GitHub files
+- Dependency manager for all .NET and Mono projects
+- Plays well with NuGet packages and [nuget.org](http://www.nuget.org)
+- Allows to reference source code files from HTTP sources and GitHub
 
 <br /><br />
 <img style="border: none" src="images/logo.png" alt="Paket logo" /> 
