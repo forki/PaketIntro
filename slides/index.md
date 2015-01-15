@@ -42,7 +42,7 @@
 
 ### Why another package manager?
     
-- NuGet has no concept of indirect dependencies
+- NuGet has no concept of transitive dependencies
 - Which packages do we really need?
 
 
@@ -71,8 +71,8 @@
 
 ### Why another package manager?
 
-- NuGet puts the version no. in the path
-- Updates requires manual work (at least if you use .fsx):
+- NuGet puts the package version in the path
+- Updates require manual work (at least if you use .fsx):
 
 
     #I "packages/Deedle.1.0.1/lib/net40"
@@ -98,7 +98,7 @@
 ### Why don't you contribute to NuGet?
 
 - NuGet is open source, but managed by Microsoft
-- Most changes are breaking (e.g. version no. in path) 
+- Most changes are breaking (e.g. version number in path) 
 - NuGet team made clear they won't accept these changes
 
 ***
@@ -184,7 +184,7 @@
     $ paket install
 
 - Computes `paket.lock` based on `paket.dependencies`
-- Restores all direct and indirect dependencies
+- Restores all direct and transitive dependencies
 - Processes all projects and adds references to the libraries
 
 ***
@@ -242,7 +242,7 @@
 
     $ paket simplify
 
-- Computes indirect dependencies from `paket.lock` file  
+- Computes transitive dependencies from `paket.lock` file  
   - Removes these from `paket.dependencies`
   - Removes these `paket.references`
 - Especially useful after conversion from NuGet ([Sample](http://fsprojects.github.io/Paket/paket-simplify.html#Sample))
