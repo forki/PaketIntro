@@ -107,7 +107,7 @@
 <h3>Why another package manager?</h3>
 
 <ul>
-<li>NuGet has no concept of indirect dependencies</li>
+<li>NuGet has no concept of transitive dependencies</li>
 <li>Which packages do we really need?</li>
 </ul>
 
@@ -170,8 +170,8 @@
 <h3>Why another package manager?</h3>
 
 <ul>
-<li>NuGet puts the version no. in the path</li>
-<li>Updates requires manual work (at least if you use .fsx):</li>
+<li>NuGet puts the package version in the path</li>
+<li>Updates require manual work (at least if you use .fsx):</li>
 </ul>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
@@ -227,7 +227,7 @@
 
 <ul>
 <li>NuGet is open source, but managed by Microsoft</li>
-<li>Most changes are breaking (e.g. version no. in path)</li>
+<li>Most changes are breaking (e.g. version number in path)</li>
 <li>NuGet team made clear they won't accept these changes</li>
 </ul>
 
@@ -406,7 +406,7 @@
 
 <ul>
 <li>Computes <code>paket.lock</code> based on <code>paket.dependencies</code></li>
-<li>Restores all direct and indirect dependencies</li>
+<li>Restores all direct and transitive dependencies</li>
 <li>Processes all projects and adds references to the libraries</li>
 </ul>
 
@@ -541,7 +541,7 @@
 </table>
 
 <ul>
-<li>Computes indirect dependencies from <code>paket.lock</code> file
+<li>Computes transitive dependencies from <code>paket.lock</code> file
 <ul>
 <li>Removes these from <code>paket.dependencies</code></li>
 <li>Removes these <code>paket.references</code></li>
