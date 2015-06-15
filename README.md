@@ -1,3 +1,4 @@
-# Intro talk for Paket
+# Intro to Paket 
 
-See https://github.com/fsprojects/Paket
+See http://forki.github.io/PaketIntro
+ 
