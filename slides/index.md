@@ -320,7 +320,7 @@
     github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fs
     github fsprojects/FSharp.TypeProviders.StarterPack src/DebugProvidedTypes.fs
 
-- Add the files to the Type Providers's `paket.references`:
+- Add the files to the Type Provider's `paket.references`:
 
 
     [lang=paket]
@@ -328,6 +328,56 @@
     File:ProvidedTypes.fs
     File:DebugProvidedTypes.fs 
        
+***
+
+### Dependency Groups
+
+- Allow for better organization of dependencies
+- Enable easier conflict resolution
+
+
+    [lang=paket]
+    source https://nuget.org/api/v2
+    
+    nuget Newtonsoft.Json    
+    github forki/FsUnit FsUnit.fs
+    
+    group Build
+        source https://nuget.org/api/v2
+        nuget FAKE    
+        github fsharp/FAKE modules/Octokit/Octokit.fsx
+    
+    group Test
+        source https://nuget.org/api/v2
+        nuget NUnit
+        nuget NUnit.Runners ~> 2
+
+***
+
+### Dependency Groups (paket.lock)
+
+
+    [lang=paket]
+    NUGET
+      remote: https://nuget.org/api/v2
+      specs:
+        Newtonsoft.Json (7.0.1)
+    GITHUB
+      remote: forki/FsUnit
+      specs:
+        FsUnit.fs (81d27fd09575a32c4ed52eadb2eeac5f365b8348)
+    GROUP Build
+    NUGET
+      remote: https://nuget.org/api/v2
+      specs:
+        FAKE (4.3.1)
+        ...
+    GROUP Test
+    NUGET
+      remote: https://nuget.org/api/v2
+      specs:
+        NUnit (2.6.4)
+        NUnit.Runners (2.6.4)
 
 ***
 
