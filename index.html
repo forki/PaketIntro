@@ -38,7 +38,7 @@
     <script language="javascript" type="text/javascript">
         function init()
         {
-            websocket = new WebSocket("ws://localhost:8083/websocket");
+            websocket = new WebSocket("ws://"+window.location.host+"/websocket");
             websocket.onmessage = function(evt) { location.reload(); };
         }
         window.addEventListener("load", init, false);
@@ -47,66 +47,45 @@
 <body>
     <div class="reveal">
         <div class="tip" id="fs1">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
-<div class="tip" id="fs2">namespace Microsoft</div>
-<div class="tip" id="fs3">Multiple items<br />type Async<br />static member AsBeginEnd : computation:(&#39;Arg -&gt; Async&lt;&#39;T&gt;) -&gt; (&#39;Arg * AsyncCallback * obj -&gt; IAsyncResult) * (IAsyncResult -&gt; &#39;T) * (IAsyncResult -&gt; unit)<br />static member AwaitEvent : event:IEvent&lt;&#39;Del,&#39;T&gt; * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt; (requires delegate and &#39;Del :&gt; Delegate)<br />static member AwaitIAsyncResult : iar:IAsyncResult * ?millisecondsTimeout:int -&gt; Async&lt;bool&gt;<br />static member AwaitTask : task:Task&lt;&#39;T&gt; -&gt; Async&lt;&#39;T&gt;<br />static member AwaitWaitHandle : waitHandle:WaitHandle * ?millisecondsTimeout:int -&gt; Async&lt;bool&gt;<br />static member CancelDefaultToken : unit -&gt; unit<br />static member Catch : computation:Async&lt;&#39;T&gt; -&gt; Async&lt;Choice&lt;&#39;T,exn&gt;&gt;<br />static member FromBeginEnd : beginAction:(AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member FromBeginEnd : arg:&#39;Arg1 * beginAction:(&#39;Arg1 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member FromBeginEnd : arg1:&#39;Arg1 * arg2:&#39;Arg2 * beginAction:(&#39;Arg1 * &#39;Arg2 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member FromBeginEnd : arg1:&#39;Arg1 * arg2:&#39;Arg2 * arg3:&#39;Arg3 * beginAction:(&#39;Arg1 * &#39;Arg2 * &#39;Arg3 * AsyncCallback * obj -&gt; IAsyncResult) * endAction:(IAsyncResult -&gt; &#39;T) * ?cancelAction:(unit -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member FromContinuations : callback:((&#39;T -&gt; unit) * (exn -&gt; unit) * (OperationCanceledException -&gt; unit) -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member Ignore : computation:Async&lt;&#39;T&gt; -&gt; Async&lt;unit&gt;<br />static member OnCancel : interruption:(unit -&gt; unit) -&gt; Async&lt;IDisposable&gt;<br />static member Parallel : computations:seq&lt;Async&lt;&#39;T&gt;&gt; -&gt; Async&lt;&#39;T []&gt;<br />static member RunSynchronously : computation:Async&lt;&#39;T&gt; * ?timeout:int * ?cancellationToken:CancellationToken -&gt; &#39;T<br />static member Sleep : millisecondsDueTime:int -&gt; Async&lt;unit&gt;<br />static member Start : computation:Async&lt;unit&gt; * ?cancellationToken:CancellationToken -&gt; unit<br />static member StartAsTask : computation:Async&lt;&#39;T&gt; * ?taskCreationOptions:TaskCreationOptions * ?cancellationToken:CancellationToken -&gt; Task&lt;&#39;T&gt;<br />static member StartChild : computation:Async&lt;&#39;T&gt; * ?millisecondsTimeout:int -&gt; Async&lt;Async&lt;&#39;T&gt;&gt;<br />static member StartChildAsTask : computation:Async&lt;&#39;T&gt; * ?taskCreationOptions:TaskCreationOptions -&gt; Async&lt;Task&lt;&#39;T&gt;&gt;<br />static member StartImmediate : computation:Async&lt;unit&gt; * ?cancellationToken:CancellationToken -&gt; unit<br />static member StartWithContinuations : computation:Async&lt;&#39;T&gt; * continuation:(&#39;T -&gt; unit) * exceptionContinuation:(exn -&gt; unit) * cancellationContinuation:(OperationCanceledException -&gt; unit) * ?cancellationToken:CancellationToken -&gt; unit<br />static member SwitchToContext : syncContext:SynchronizationContext -&gt; Async&lt;unit&gt;<br />static member SwitchToNewThread : unit -&gt; Async&lt;unit&gt;<br />static member SwitchToThreadPool : unit -&gt; Async&lt;unit&gt;<br />static member TryCancelled : computation:Async&lt;&#39;T&gt; * compensation:(OperationCanceledException -&gt; unit) -&gt; Async&lt;&#39;T&gt;<br />static member CancellationToken : Async&lt;CancellationToken&gt;<br />static member DefaultCancellationToken : CancellationToken<br /><br />Full name: Microsoft.FSharp.Control.Async<br /><br />--------------------<br />type Async&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Control.Async&lt;_&gt;</div>
-<div class="tip" id="fs4">val fsi : Compiler.Interactive.InteractiveSession<br /><br />Full name: Microsoft.FSharp.Compiler.Interactive.Settings.fsi</div>
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section >
-
 <h3>What is Paket?</h3>
-
 <ul>
 <li>Dependency manager for all .NET and Mono projects</li>
 <li>Plays well with NuGet packages and <a href="http://www.nuget.org">nuget.org</a></li>
 <li>Allows to reference source code files from HTTP sources and GitHub</li>
 </ul>
-
 <br /><br />
 <img style="border: none" src="images/logo.png" alt="Paket logo" /> 
-
 </section>
-
 <section >
-
 <h3>Why another package manager?</h3>
-
 <ul>
 <li>.NET ecosystem has already NuGet</li>
 <li>Integrated in Visual Studio and Xamarin Studio</li>
 <li><a href="https://www.nuget.org/">nuget.org</a> is etablished package feed</li>
 </ul>
-
 <br /><br />
 <img style="border: none" src="images/nuget.png" alt="Nuget logo" /> 
-
 </section>
-
 <section >
-
 <h3>Why another package manager?</h3>
-
 <ul>
 <li>NuGet has no global view of your dependencies</li>
 <li><code>packages.config</code> files are spread over all project folders</li>
 <li>As a sample <a href="https://github.com/MassTransit/MassTransit">MassTransit</a>:</li>
 </ul>
-
 <br /><br />
 <img style="border: none" src="images/MassTransit.png" alt="packages.config everywhere" /> 
-
 </section>
-
 <section >
-
 <h3>Why another package manager?</h3>
-
 <ul>
 <li>NuGet has no concept of transitive dependencies</li>
 <li>Which packages do we really need?</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -151,18 +130,13 @@
 </code></pre></td>
 </tr>
 </table>
-
 </section>
-
 <section >
-
 <h3>Why another package manager?</h3>
-
 <ul>
 <li>NuGet puts the package version in the path</li>
 <li>Updates require manual work (at least if you use .fsx):</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -185,36 +159,24 @@
 </code></pre></td>
 </tr>
 </table>
-
 </section>
-
 <section >
-
 <h3>Why another package manager?</h3>
-
 <ul>
 <li>NuGet doesn't allow to reference plain source files</li>
 <li>If you want to reuse code you have to create a package</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Why don't you contribute to NuGet?</h3>
-
 <ul>
 <li>NuGet is open source, but managed by Microsoft</li>
 <li>Most changes are breaking (e.g. version number in path)</li>
 <li>NuGet team made clear they won't accept these changes</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Paket - Project Principles</h3>
-
 <ul>
 <li>Integrate well into the existing NuGet ecosystem</li>
 <li>Make things work with minimal tooling (plain text files)</li>
@@ -222,33 +184,23 @@
 <li>Automate everything</li>
 <li>Create a nice community</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Paket file structure</h3>
-
 <ul>
 <li><code>paket.dependencies</code>: Global definition of dependencies</li>
 <li><code>paket.lock</code>: List of used versions for all dependencies</li>
 <li><code>paket.references</code>: Dependency definition per project</li>
 </ul>
-
 <br /><br />
 <img style="border: none" src="images/structure.png" alt="Basic structure" /> 
-
 </section>
-
 <section >
-
 <h3>paket.dependencies</h3>
-
 <ul>
 <li>Specifies all direct dependencies</li>
 <li>Manually editable (or via paket.exe commands)</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -256,28 +208,21 @@
 <span class="l">5: </span>
 <span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"> <span class="i">source</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
-
- <span class="i">nuget</span> <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span>         <span class="c">// any version</span>
- <span class="i">nuget</span> <span class="i">UnionArgParser</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">0.7</span>   <span class="c">// x &gt;= 0.7</span>
- <span class="i">nuget</span> <span class="i">log4net</span> <span class="o">~&gt;</span> <span class="n">1.2</span>          <span class="c">// 1.2 &lt;= x &lt; 2     </span>
- <span class="i">nuget</span> <span class="i">NUnit</span> <span class="i">prerelease</span>        <span class="c">// any version incl. prereleases</span>
-</code></pre></td>
-</tr>
-</table>
-
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+       
+<span class="k">nuget </span>Newtonsoft.Json         <span class="c">// any version</span>
+<span class="k">nuget </span>UnionArgParser <span class="o">&gt;=</span> <span class="n">0.7</span>   <span class="c">// x &gt;= 0.7</span>
+<span class="k">nuget </span>log4net <span class="o">~&gt;</span> <span class="n">1.2</span>          <span class="c">// 1.2 &lt;= x &lt; 2     </span>
+<span class="k">nuget </span>NUnit prerelease        <span class="c">// any version incl. prereleases</span>
+</code></pre></td></tr></table>
 </section>
-
 <section >
-
 <h3>paket.lock</h3>
-
 <ul>
 <li>Graph of used versions for all dependencies</li>
 <li>Compareable to a unified view of all <code>packages.config</code></li>
 <li>Automatically computed from <code>paket.dependencies</code>:</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -292,329 +237,245 @@
 <span class="l">12: </span>
 <span class="l">13: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">NUGET</span>
-  <span class="i">remote</span><span class="o">:</span> <span class="i">https</span><span class="o">:</span><span class="c">//nuget.org/api/v2</span>
-  <span class="i">specs</span><span class="o">:</span>
-    <span class="i">log4net</span> (<span class="n">1.2</span><span class="o">.</span><span class="n">10</span>)
-    <span onmouseout="hideTip(event, 'fs2', 18)" onmouseover="showTip(event, 'fs2', 18)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span> (<span class="n">1.1</span><span class="o">.</span><span class="n">9</span>)
-      <span onmouseout="hideTip(event, 'fs2', 19)" onmouseover="showTip(event, 'fs2', 19)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.0</span><span class="o">.</span><span class="n">14</span>)
-    <span onmouseout="hideTip(event, 'fs2', 20)" onmouseover="showTip(event, 'fs2', 20)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 21)" onmouseover="showTip(event, 'fs3', 21)" class="i">Async</span> (<span class="n">1.0</span><span class="o">.</span><span class="n">168</span>) <span class="o">-</span> <span class="o">&gt;</span><span class="o">=</span> <span class="i">net40</span> <span class="o">&lt;</span> <span class="i">net45</span>
-      <span onmouseout="hideTip(event, 'fs2', 22)" onmouseover="showTip(event, 'fs2', 22)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.1</span><span class="o">.</span><span class="n">8</span>)
-    <span onmouseout="hideTip(event, 'fs2', 23)" onmouseover="showTip(event, 'fs2', 23)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span class="i">Build</span> (<span class="n">1.0</span><span class="o">.</span><span class="n">21</span>)
-    <span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span> (<span class="n">6.0</span><span class="o">.</span><span class="n">8</span>)
-    <span class="i">NUnit</span> (<span class="n">3.0</span><span class="o">.</span><span class="n">0</span><span class="o">-</span><span class="i">alpha</span><span class="o">-</span><span class="n">4</span>)
-      <span onmouseout="hideTip(event, 'fs2', 24)" onmouseover="showTip(event, 'fs2', 24)" class="i">Microsoft</span><span class="o">.</span><span class="i">Bcl</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 25)" onmouseover="showTip(event, 'fs3', 25)" class="i">Async</span> (<span class="o">&gt;</span><span class="o">=</span> <span class="n">1.0</span><span class="o">.</span><span class="n">165</span>) <span class="o">-</span> <span class="o">&gt;</span><span class="o">=</span> <span class="i">net40</span> <span class="o">&lt;</span> <span class="i">net45</span>
-    <span class="i">UnionArgParser</span> (<span class="n">0.8</span><span class="o">.</span><span class="n">2</span>)
-</code></pre></td>
-</tr>
-</table>
-
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">NUGET</span>
+  <span class="k">remote</span>: https://nuget.org/api/v2
+  <span class="k">specs</span>:
+    log4net (<span class="n">1.2.10</span>)
+    Microsoft.Bcl (<span class="n">1.1.9</span>)
+      Microsoft.Bcl.Build (<span class="o">&gt;=</span> <span class="n">1.0.14</span>)
+    Microsoft.Bcl.Async (<span class="n">1.0.168</span>) - <span class="o">&gt;=</span> net40 <span class="o">&lt;</span> net45
+      Microsoft.Bcl (<span class="o">&gt;=</span> <span class="n">1.1.8</span>)
+    Microsoft.Bcl.Build (<span class="n">1.0.21</span>)
+    Newtonsoft.Json (<span class="n">6.0.8</span>)
+    NUnit (<span class="n">3.0.0</span>-alpha-<span class="n">4</span>)
+      Microsoft.Bcl.Async (<span class="o">&gt;=</span> <span class="n">1.0.165</span>) - <span class="o">&gt;=</span> net40 <span class="o">&lt;</span> net45
+    UnionArgParser (<span class="n">0.8.2</span>)
+</code></pre></td></tr></table>
 </section>
-
 <section >
-
 <h3>paket.references</h3>
-
 <ul>
 <li>Specifies which dependencies are used in a given project</li>
 <li>Compareable to <code>packages.config</code>, but without versions</li>
 <li>Only direct dependencies need to  be listed</li>
 <li>Manually editable</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">Newtonsoft</span><span class="o">.</span><span class="i">Json</span>
-<span class="i">UnionArgParser</span>
-<span class="i">NUnit</span>
-</code></pre></td>
-</tr>
-</table>
-
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket">Newtonsoft.Json
+UnionArgParser
+NUnit
+</code></pre></td></tr></table>
 </section>
-
 <section >
-
 <h3>Installing packages</h3>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">$</span> <span class="i">paket</span> <span class="i">install</span>
 </code></pre></td>
 </tr>
 </table>
-
 <ul>
 <li>Computes <code>paket.lock</code> based on <code>paket.dependencies</code></li>
 <li>Restores all direct and transitive dependencies</li>
 <li>Processes all projects and adds references to the libraries</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Checking for updates</h3>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">$</span> <span class="i">paket</span> <span class="i">outdated</span>
 </code></pre></td>
 </tr>
 </table>
-
 <ul>
 <li>Lists all dependencies that have newer versions available:</li>
 </ul>
-
 <br /><br />
 <img style="border: none" src="images/paket-outdated.png" alt="Paket outdated" /> 
-
 </section>
-
 <section >
-
 <h3>Updating packages</h3>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">$</span> <span class="i">paket</span> <span class="i">update</span>
 </code></pre></td>
 </tr>
 </table>
-
 <ul>
 <li>Recomputes <code>paket.lock</code> based on <code>paket.dependencies</code></li>
 <li>Updates all versions to the latest matching all restrictions</li>
 <li>Runs <code>paket install</code></li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Restoring packages</h3>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">$</span> <span class="i">paket</span> <span class="i">restore</span>
 </code></pre></td>
 </tr>
 </table>
-
 <ul>
 <li>Restores all direct and indirect dependencies</li>
 <li>Will not change <code>paket.lock</code> file</li>
 <li>Can be used for CI build or from inside Visual Studio</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Convert from NuGet</h3>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">$</span> <span class="i">paket</span> <span class="i">convert</span><span class="o">-</span><span class="i">from</span><span class="o">-</span><span class="i">nuget</span>
 </code></pre></td>
 </tr>
 </table>
-
 <ul>
-<li>Finds all <code>packages.config</code> files
+<li>
+Finds all <code>packages.config</code> files
 <ul>
 <li>Converts them to <code>paket.references</code> files</li>
 <li>Generates <code>paket.dependencies</code> file</li>
 <li>Computes <code>paket.lock</code> file</li>
-</ul></li>
+</ul>
+</li>
 <li>Visual Studio package restore process will be converted</li>
 <li>Runs <code>paket install</code></li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Simplify dependencies</h3>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">$</span> <span class="i">paket</span> <span class="i">simplify</span>
 </code></pre></td>
 </tr>
 </table>
-
 <ul>
-<li>Computes transitive dependencies from <code>paket.lock</code> file
+<li>
+Computes transitive dependencies from <code>paket.lock</code> file
 <ul>
 <li>Removes these from <code>paket.dependencies</code></li>
 <li>Removes these <code>paket.references</code></li>
-</ul></li>
+</ul>
+</li>
 <li>Especially useful after conversion from NuGet (<a href="http://fsprojects.github.io/Paket/paket-simplify.html#Sample">Sample</a>)</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Bootstrapping</h3>
-
 <ul>
 <li>Don't commit <code>paket.exe</code> to your repository</li>
 <li>Bootstrapper is available for <a href="https://github.com/fsprojects/Paket/releases/latest">download</a></li>
 <li>Bootstrapper allows to download latest <code>paket.exe</code></li>
 <li>Can be used for CI build or from inside Visual Studio</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>Source code dependencies</h3>
-
 <ul>
 <li>Allow to reference plain source code files</li>
-<li>Available for:
+<li>
+Available for:
 <ul>
 <li><a href="https://www.github.com">GitHub</a></li>
 <li><a href="https://gist.github.com/">GitHub gists</a></li>
 <li>HTTP resources</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 </section>
-
 <section >
-
 <h3>Source code dependencies</h3>
-
 <h4>GitHub sample (1)</h4>
-
 <ul>
 <li>Add dependency to the <code>paket.dependencies</code> file</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">github</span> <span class="i">forki</span><span class="o">/</span><span class="i">FsUnit</span> <span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span>
-</code></pre></td>
-</tr>
-</table>
-
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">github </span>forki/FsUnit FsUnit.fs
+</code></pre></td></tr></table>
 <ul>
 <li>Also add a file reference to a <code>paket.references</code> file</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">File</span><span class="o">:</span><span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span>
-</code></pre></td>
-</tr>
-</table>
-
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">File</span>:FsUnit.fs
+</code></pre></td></tr></table>
 </section>
-
 <section >
-
 <h3>Source code dependencies</h3>
-
 <h4>GitHub sample (2)</h4>
-
 <ul>
 <li><code>paket install</code> will add a new section to <code>paket.lock</code>:</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">GITHUB</span>
-  <span class="i">remote</span><span class="o">:</span> <span class="i">forki</span><span class="o">/</span><span class="i">FsUnit</span>
-  <span class="i">specs</span><span class="o">:</span>
-    <span class="i">FsUnit</span><span class="o">.</span><span class="i">fs</span> (<span class="n">7623fc13439f0e60bd05c1ed3b5f6dcb937fe468</span>)
-</code></pre></td>
-</tr>
-</table>
-
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">GITHUB</span>
+  <span class="k">remote</span>: forki/FsUnit
+  <span class="k">specs</span>:
+    FsUnit.fs (7623fc13439f0e60bd05c1ed3b5f6dcb937fe468)
+</code></pre></td></tr></table>
 <ul>
 <li><code>paket install</code> will also add a reference to the project:</li>
 </ul>
-
 <br /><br />
 <img style="border: none" src="images/github_ref_default_link.png" alt="Source reference" />
-
 </section>
-
 <section >
-
 <h3>Source code dependencies</h3>
-
 <h4>Use case - "Type Provider definition"</h4>
-
 <ul>
 <li>For F# Type Providers you need a couple of helper files</li>
 <li>It was painful to keep these up-to-date</li>
 <li>Reference F# Type Provider files in <code>paket.dependencies</code>:</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">github</span> <span class="i">fsprojects</span><span class="o">/</span><span class="i">FSharp</span><span class="o">.</span><span class="i">TypeProviders</span><span class="o">.</span><span class="i">StarterPack</span> <span class="i">src</span><span class="o">/</span><span class="i">ProvidedTypes</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 26)" onmouseover="showTip(event, 'fs4', 26)" class="i">fsi</span>
-<span class="i">github</span> <span class="i">fsprojects</span><span class="o">/</span><span class="i">FSharp</span><span class="o">.</span><span class="i">TypeProviders</span><span class="o">.</span><span class="i">StarterPack</span> <span class="i">src</span><span class="o">/</span><span class="i">ProvidedTypes</span><span class="o">.</span><span class="i">fs</span>
-<span class="i">github</span> <span class="i">fsprojects</span><span class="o">/</span><span class="i">FSharp</span><span class="o">.</span><span class="i">TypeProviders</span><span class="o">.</span><span class="i">StarterPack</span> <span class="i">src</span><span class="o">/</span><span class="i">DebugProvidedTypes</span><span class="o">.</span><span class="i">fs</span>
-</code></pre></td>
-</tr>
-</table>
-
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">github </span>fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fsi
+<span class="k">github </span>fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fs
+<span class="k">github </span>fsprojects/FSharp.TypeProviders.StarterPack src/DebugProvidedTypes.fs
+</code></pre></td></tr></table>
 <ul>
 <li>Add the files to the Type Providers's <code>paket.references</code>:</li>
 </ul>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">File</span><span class="o">:</span><span class="i">ProvidedTypes</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 27)" onmouseover="showTip(event, 'fs4', 27)" class="i">fsi</span>
-<span class="i">File</span><span class="o">:</span><span class="i">ProvidedTypes</span><span class="o">.</span><span class="i">fs</span>
-<span class="i">File</span><span class="o">:</span><span class="i">DebugProvidedTypes</span><span class="o">.</span><span class="i">fs</span> 
-</code></pre></td>
-</tr>
-</table>
-
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">File</span>:ProvidedTypes.fsi
+<span class="k">File</span>:ProvidedTypes.fs
+<span class="k">File</span>:DebugProvidedTypes.fs 
+</code></pre></td></tr></table>
 </section>
-
 <section >
-
 <h3>Getting help</h3>
-
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">$</span> <span class="i">paket</span> [<span class="i">command</span>] <span class="o">--</span><span class="i">help</span>
 </code></pre></td>
 </tr>
 </table>
-
 <ul>
 <li>Visit the <a href="http://fsprojects.github.io/Paket/">online documentation</a></li>
 <li>Create a <a href="https://github.com/fsprojects/Paket/issues">GitHub issue</a></li>
 <li>Follow <a href="https://twitter.com/PaketManager">PaketManager</a> on Twitter</li>
 </ul>
-
 </section>
-
 <section >
-
 <h3>ProjectScaffold</h3>
-
 <ul>
 <li>Used to initialialize a prototypical .NET/mono solution</li>
-<li>This includes Paket and a FAKE build process that:
+<li>
+This includes Paket and a FAKE build process that:
 <ul>
 <li>allows a simple one step build and release process</li>
 <li>works with most build servers</li>
@@ -623,42 +484,31 @@
 <li>generates API docs based on XML documentation tags</li>
 <li>generates documentation based on Markdown files</li>
 <li>generates and pushes NuGet packages</li>
-</ul></li>
+</ul>
+</li>
 <li><a href="http://fsprojects.github.io/ProjectScaffold/">http://fsprojects.github.io/ProjectScaffold/</a></li>
 </ul>
-
 <br /><br />
 <img src="images/projectscaffold-logo.png" alt="ProjectScaffold" /> 
-
 </section>
-
 <section >
-
 <h3>Paket.VisualStudio</h3>
-
 <ul>
 <li>Alpha version of <a href="https://github.com/hmemcpy/Paket.VisualStudio">VisualStudio plugin</a></li>
 <li>Takes contributions</li>
 </ul>
-
 <br /><br />
 <img style="border: none" src="images/Paket.VisualStudio.png" alt="Paket.VisualStudio" /> 
-
 </section>
-
 <section >
-
 <h3>Thank you</h3>
-
 <ul>
 <li>Take a look at <a href="https://github.com/fsprojects/Paket">https://github.com/fsprojects/Paket</a></li>
 <li>We take contributions!</li>
 <li>Slides are MIT licensed and made using <a href="http://fsprojects.github.io/FsReveal/">FsReveal</a></li>
 <li>Send corrections to <a href="https://github.com/forki/PaketIntro">https://github.com/forki/PaketIntro</a></li>
 </ul>
-
 </section>
-
 
 
         </div>
