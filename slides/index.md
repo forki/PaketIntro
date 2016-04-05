@@ -43,7 +43,6 @@
 ### Why another package manager?
     
 - NuGet has no concept of transitive dependencies
-- Which packages do we really need?
 
 
     <?xml version="1.0" encoding="utf-8"?>
@@ -113,15 +112,18 @@
 
 ***
 
+### Paket - Community
+
+<img style="border: none" src="images/Community.png" alt="Community" /> 
+
+***
+
 ### Paket file structure
 
 - `paket.dependencies`: Global definition of dependencies
 - `paket.lock`: List of used versions for all dependencies
-- `paket.references`: Dependency definition per project
-
-
-<br /><br />
-<img style="border: none" src="images/structure.png" alt="Basic structure" /> 
+- `paket.references`: Dependency definition per project   
+- `paket.template`: Package definition for new packages
 
 ***
 
