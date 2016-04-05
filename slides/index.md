@@ -383,6 +383,18 @@
 
 ***
 
+### Additional Caches (v3 Feature)
+
+    [lang=paket]
+    source https://nuget.org/api/v2
+    cache //hive/dependencies
+    
+    nuget Newtonsoft.Json
+    nuget UnionArgParser
+    nuget FSharp.Core
+
+***
+
 ### Getting help
 
 
@@ -395,17 +407,62 @@
 
 ***
 
+### Paket.VisualStudio
+
+- [VisualStudio plugin](https://github.com/hmemcpy/Paket.VisualStudio)
+
+
+<br />
+<img style="border: none" src="images/Paket.VisualStudio.png" alt="Paket.VisualStudio" />
+
+***
+
+### Paket.XamarinStudio
+
+- [Xamarin Studio plugin](http://addins.monodevelop.com/)
+
+
+<br />
+<img style="border: none" src="images/paket-xamarin-studio.png" alt="Paket.XamarinStudio" />
+
+***
+
+### Paket.Atom
+
+-  Available in [Atom's plugin manager](https://atom.io/packages/paket)
+
+<br />
+<img style="border: none" src="images/paket-add-atom.gif" alt="Paket.Atom" />
+
+***
+
+### Paket.VSCode
+
+-  Available in [VSCode's plugin manager](https://code.visualstudio.com/docs/editor/extension-gallery)
+
+<br />
+<img style="border: none" src="images/paket-vscode.gif" alt="Paket.VSCode" />
+
+***
+
+### Paket.Emacs
+
+- Project site: [https://github.com/zzdtri/paket.el](https://github.com/zzdtri/paket.el)
+
+<br />
+<img style="border: none" src="images/paket-add-emacs.gif" alt="Paket.Emacs" />
+
+
 ### ProjectScaffold
 
-- Used to initialialize a prototypical .NET/mono solution
-- This includes Paket and a FAKE build process that:
-  - allows a simple one step build and release process
-  - works with most build servers
-  - compiles the application and runs all test projects
-  - synchronizes all AssemblyInfo files prior to compilation
-  - generates API docs based on XML documentation tags
-  - generates documentation based on Markdown files
-  - generates and pushes NuGet packages
+- Allows a simple one step build and release process
+- Works with most build servers
+- Compiles the application and runs all test projects
+- Synchronizes AssemblyInfo files prior to compilation
+- Generates API docs based on XML documentation
+- Generates documentation based on Markdown files
+- Generates and pushes NuGet packages
+
 - http://fsprojects.github.io/ProjectScaffold/
 
 
@@ -417,7 +474,6 @@
 ### Paket.VisualStudio
 
 - Alpha version of [VisualStudio plugin](https://github.com/hmemcpy/Paket.VisualStudio)
-- Takes contributions
 
 
 <br /><br />
@@ -427,7 +483,10 @@
 
 ### Thank you
 
+- Take a look at https://github.com/fsharp/FAKE
 - Take a look at https://github.com/fsprojects/Paket
 - We take contributions!
 - Slides are MIT licensed and made using [FsReveal](http://fsprojects.github.io/FsReveal/)
 - Send corrections to https://github.com/forki/PaketIntro
+- Follow [@fsharpMake](https://twitter.com/fsharpMake)
+- Follow [@PaketManager](https://twitter.com/PaketManager)
