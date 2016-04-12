@@ -395,6 +395,66 @@
 
 ***
 
+### Quiz: What's this?
+
+    [lang=javascript]
+    str = String(str);
+  
+    var i = -1;
+  
+    if (!ch && ch !== 0) ch = ' ';
+  
+    len = len - str.length;
+  
+    while (++i < len) {
+      str = ch + str;
+    }
+  
+    return str;
+
+***
+
+### leftpad
+
+    [lang=javascript]
+    module.exports = leftpad;
+    
+    function leftpad (str, len, ch) {
+      str = String(str);
+    
+      var i = -1;
+    
+      if (!ch && ch !== 0) ch = ' ';
+    
+      len = len - str.length;
+    
+      while (++i < len) {
+        str = ch + str;
+      }
+    
+      return str;
+    }
+
+***
+
+### "How one developer just broke Node, Babel and thousands of projects in 11 lines of JavaScript"
+
+<img style="border: none" src="images/js_tower.jpg" alt="NPM Tower - Credit: Claus Rebler" />
+<br />
+<a href="http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/">http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/</a>
+
+***
+
+## This can happen to you!
+
+<img style="border: none" src="images/deleted.gif" alt="NuGet package deletion" />
+
+* http://blog.nuget.org/20151007/Package-Content-and-Removals.html
+* http://www.navision-blog.de/blog/2016/03/31/introducing-pakets-caching-feature-or-how-i-made-my-builds-reproducible-again/
+                                                                                                   
+
+***
+
 ### Additional Caches (v3 Feature)
 
     [lang=paket]
