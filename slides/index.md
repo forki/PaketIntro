@@ -118,6 +118,12 @@
 
 ***
 
+### Paket - Community
+
+<img style="border: none" src="images/PR1.gif" alt="Community" /> 
+
+***
+
 ### Paket file structure
 
 - `paket.dependencies`: Global definition of dependencies
@@ -180,6 +186,12 @@
     Newtonsoft.Json
     UnionArgParser
     NUnit
+
+***
+
+### Paket file structure
+
+<img style="border: none" src="images/paket-overview.png" alt="Paket Overview" /> 
 
 ***
 
