@@ -10,7 +10,8 @@
 
 - Dependency manager for all .NET and Mono projects
 - Plays well with NuGet packages and [nuget.org](http://www.nuget.org)
-- Allows to reference source code files from HTTP sources and GitHub
+- Allows to reference source code files from HTTP and GitHub
+- Version 1.0 released at F# eXchange 2015 
 
 <br /><br />
 <img style="border: none" src="images/logo.png" alt="Paket logo" /> 
@@ -24,7 +25,7 @@
 - [nuget.org](https://www.nuget.org/) is etablished package feed
 
 <br /><br />
-<img style="border: none" src="images/nuget.png" alt="Nuget logo" /> 
+<img style="border: none" src="images/nuget.png" alt="NuGet logo" /> 
 
 *** 
 
@@ -464,6 +465,53 @@
     nuget Newtonsoft.Json
     nuget UnionArgParser
     nuget FSharp.Core
+
+***
+
+### Additional Caches (v3 Feature)
+
+    [lang=paket]
+    source https://nuget.org/api/v2
+    cache //hive/dependencies
+    
+    nuget Newtonsoft.Json
+    nuget UnionArgParser
+    nuget FSharp.Core
+
+***
+
+### git dependencies (v3 Feature)
+
+    [lang=paket]
+    source https://nuget.org/api/v2
+    
+    nuget Newtonsoft.Json
+    nuget UnionArgParser
+    
+    git http://github.com/forki/AskMe.git < 3.0
+    
+***
+
+### git dependencies as NuGet source 
+### (v3 Feature)
+
+    [lang=paket]
+    git https://github.com/forki/AskMe.git < 3.0 Packages: /source/
+    
+    nuget AskMe
+
+***
+
+### git dependencies as NuGet source 
+### (v3 Feature)
+
+<img style="border: none" src="images/git-ref.png" alt="git repository" />
+
+    [lang=paket]
+    git https://github.com/forki/nupkgtest.git build:"build.cmd", Packages: /source/, OS:windows
+    git https://github.com/forki/nupkgtest.git build:"build.sh", Packages: /source/, OS:mono
+
+    nuget Argu      
 
 ***
 
