@@ -6,6 +6,25 @@
 
 ***
 
+### Quiz: What's this?
+
+    [lang=javascript]
+    str = String(str);
+  
+    var i = -1;
+  
+    if (!ch && ch !== 0) ch = ' ';
+  
+    len = len - str.length;
+  
+    while (++i < len) {
+      str = ch + str;
+    }
+  
+    return str;    
+
+***
+
 ### What is Paket?
 
 - Dependency manager for all .NET and Mono projects
@@ -468,18 +487,6 @@
 
 ***
 
-### Additional Caches (v3 Feature)
-
-    [lang=paket]
-    source https://nuget.org/api/v2
-    cache //hive/dependencies
-    
-    nuget Newtonsoft.Json
-    nuget UnionArgParser
-    nuget FSharp.Core
-
-***
-
 ### git dependencies (v3 Feature)
 
     [lang=paket]
@@ -603,10 +610,8 @@
 
 ### Thank you
 
-- Take a look at https://github.com/fsharp/FAKE
 - Take a look at https://github.com/fsprojects/Paket
 - We take contributions!
 - Slides are MIT licensed and made using [FsReveal](http://fsprojects.github.io/FsReveal/)
 - Send corrections to https://github.com/forki/PaketIntro
-- Follow [@fsharpMake](https://twitter.com/fsharpMake)
 - Follow [@PaketManager](https://twitter.com/PaketManager)
