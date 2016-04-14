@@ -600,6 +600,21 @@ http://sergey-tihon.github.io/Stanford.NLP.NET/
 
 ***
 
+### git dependencies 
+#### Use case - "Ionide"
+
+<img style="border: none" src="images/clone-and-build.png" alt="Ionide" />
+
+***
+
+### git dependencies 
+#### Use case - "Ionide"
+
+<img style="border: none" src="images/result.png" alt="Ionide" />
+
+
+***
+
 ### Getting help
 
 
