@@ -6,6 +6,18 @@
 
 ***
 
+# Paket + git = <span style="color:red">❤<span>
+
+<br /><br />
+<br />
+
+
+- Steffen Forkmann
+- @sforkmann
+- github/forki
+
+***
+
 ### Quiz: What's this?
 
     [lang=javascript]
