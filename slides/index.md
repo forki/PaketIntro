@@ -6,15 +6,16 @@
 
 ***
 
+<br /><br /><br /><br />
+
 # Paket + git = <span style="color:red">❤<span>
 
-<br /><br />
-<br />
+<br /><br /><br />
 
 
-- Steffen Forkmann
-- @sforkmann
-- github/forki
+* Steffen Forkmann
+* @sforkmann
+* github/forki
 
 ***
 
@@ -40,8 +41,6 @@
 ### What is Paket?
 
 - Dependency manager for all .NET and Mono projects
-- Plays well with NuGet packages and [nuget.org](http://www.nuget.org)
-- Allows to reference source code files from HTTP and GitHub
 - Version 1.0 released at F# eXchange 2015 
 
 <br /><br />
@@ -558,6 +557,14 @@ http://sergey-tihon.github.io/Stanford.NLP.NET/
     git https://.../test.git build:"build.sh", Packages: /source/, OS:mono
 
     nuget Argu
+
+***
+
+### git dependencies 
+#### Use case - "Ionide"
+
+<img style="border: none" src="images/fsi.gif" alt="Ionide" />
+
     
 ***
 
