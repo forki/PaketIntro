@@ -106,14 +106,6 @@
 
 ***
 
-### Why another package manager?
-
-- NuGet doesn't allow to reference plain source files
-- If you want to reuse code you have to create a package
-
-
-***
-
 ### Why don't you contribute to NuGet?
 
 - NuGet is open source, but managed by Microsoft
@@ -134,13 +126,25 @@
 
 ### Paket - Community
 
-<img style="border: none" src="images/Community.png" alt="Community" /> 
+<img style="border: none" src="images/logo-added.png" alt="Logo addedd" />
 
 ***
 
 ### Paket - Community
 
+<img style="border: none" src="images/typos.png" alt="Community" /> 
+ 
+***
+
+### Paket - Community
+
 <img style="border: none" src="images/PR1.gif" alt="Community" /> 
+
+***
+
+### Paket - Community
+
+<img style="border: none" src="images/Community.png" alt="Community" /> 
 
 ***
 
@@ -180,7 +184,6 @@
     [lang=paket]
     NUGET
       remote: https://nuget.org/api/v2
-      specs:
         log4net (1.2.10)
         Microsoft.Bcl (1.1.9)
           Microsoft.Bcl.Build (>= 1.0.14)
@@ -295,6 +298,14 @@
 
 ***
 
+## Recap: Basic structure
+
+- Command line tool over plain text
+- Direct vs. transitive dependencies
+- Only one version of a package
+
+***
+
 ### Source code dependencies
 
 - Allow to reference plain source code files
@@ -331,7 +342,6 @@
     [lang=paket]
     GITHUB
       remote: forki/FsUnit
-      specs:
         FsUnit.fs (7623fc13439f0e60bd05c1ed3b5f6dcb937fe468)
 
 - `paket install` will also add a reference to the project:
@@ -361,7 +371,26 @@
     File:ProvidedTypes.fsi
     File:ProvidedTypes.fs
     File:DebugProvidedTypes.fs 
-       
+    
+***
+
+### Source code dependencies 
+#### Use case - "Stanford.NLP.NET"
+
+    [lang=paket]
+    source https://nuget.org/api/v2
+      
+    nuget IKVM
+    
+    http http://www.frijters.net/ikvmbin-8.1.5717.0.zip
+    http http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip
+    http http://nlp.stanford.edu/software/stanford-ner-2015-12-09.zip
+    http http://nlp.stanford.edu/software/stanford-parser-full-2015-12-09.zip
+    http http://nlp.stanford.edu/software/stanford-postagger-full-2015-12-09.zip
+    http http://nlp.stanford.edu/software/stanford-segmenter-2015-12-09.zip
+
+http://sergey-tihon.github.io/Stanford.NLP.NET/
+
 ***
 
 ### Dependency Groups
@@ -394,22 +423,18 @@
     [lang=paket]
     NUGET
       remote: https://nuget.org/api/v2
-      specs:
         Newtonsoft.Json (7.0.1)
     GITHUB
       remote: forki/FsUnit
-      specs:
         FsUnit.fs (81d27fd09575a32c4ed52eadb2eeac5f365b8348)
     GROUP Build
     NUGET
       remote: https://nuget.org/api/v2
-      specs:
         FAKE (4.3.1)
         ...
     GROUP Test
     NUGET
       remote: https://nuget.org/api/v2
-      specs:
         NUnit (2.6.4)
         NUnit.Runners (2.6.4)
 
@@ -475,7 +500,8 @@
 
 ***
 
-### Additional Caches (v3 Feature)
+### Additional Caches
+#### (v3 Feature)
 
     [lang=paket]
     source https://nuget.org/api/v2
@@ -487,7 +513,8 @@
 
 ***
 
-### git dependencies (v3 Feature)
+### git dependencies 
+#### (v3 Feature)
 
     [lang=paket]
     source https://nuget.org/api/v2
@@ -500,7 +527,7 @@
 ***
 
 ### git dependencies as NuGet source 
-### (v3 Feature)
+#### (v3 Feature)
 
     [lang=paket]
     git https://github.com/forki/AskMe.git < 3.0 Packages: /source/
@@ -510,15 +537,66 @@
 ***
 
 ### git dependencies as NuGet source 
-### (v3 Feature)
+#### (v3 Feature)
 
 <img style="border: none" src="images/git-ref.png" alt="git repository" />
 
     [lang=paket]
-    git https://github.com/forki/nupkgtest.git build:"build.cmd", Packages: /source/, OS:windows
-    git https://github.com/forki/nupkgtest.git build:"build.sh", Packages: /source/, OS:mono
+    git https://.../test.git build:"build.cmd", Packages: /source/, OS:windows
+    git https://.../test.git build:"build.sh", Packages: /source/, OS:mono
 
-    nuget Argu      
+    nuget Argu
+    
+***
+
+### git dependencies 
+#### Use case - "Ionide"
+
+<img style="border: none" src="images/ionide-white.png" alt="Ionide" width=100 />
+
+    [lang=paket]
+    source https://nuget.org/api/v2
+    
+    git https://.../ionide-vscode-helpers.git master build:"build.cmd"
+    git https://.../FSharpFormatting.CLI.git master build:"build.cmd"
+    git https://.../FsAutoComplete.git dotnetcore build:"build.cmd LocalRelease"
+    git git@github.com:ionide/ionide-fsgrammar.git
+    
+    nuget FAKE
+    nuget FunScript
+    nuget Npm.js
+     
+***
+
+### git dependencies 
+#### Use case - "Ionide"
+
+    [lang=paket]
+    NUGET
+      remote: https://www.nuget.org/api/v2
+        FAKE (4.25.2)
+        FunScript (1.1.94)
+        ...
+        Npm.js (2.13.1)
+    GIT
+      remote: https://github.com/ionide/ionide-vscode-helpers.git
+         (b81a80ede2179222a5639cf866423d9bc6c2f0b4)
+          build: build.cmd
+      remote: https://github.com/ionide/FSharpFormatting.CLI.git
+         (8b996684032cebe1ba052696fb30081fab023b1f)
+          build: build.cmd
+      remote: https://github.com/ionide/FsAutoComplete.git
+         (8be5fa64fdd5b8f811c7dda1beaa3b861c5808b2)
+          build: build.cmd LocalRelease
+      remote: git@github.com:ionide/ionide-fsgrammar.git
+         (8061b5296321522633b16d7df66af8cf5fcd3784)
+    
+***
+
+### git dependencies 
+#### Use case - "Ionide"
+
+<img style="border: none" src="images/ionide-repos.png" alt="Ionide" />
 
 ***
 
