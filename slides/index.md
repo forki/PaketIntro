@@ -692,6 +692,19 @@ http://sergey-tihon.github.io/Stanford.NLP.NET/
 <img style="border: none" src="images/paket-add-emacs.gif" alt="Paket.Emacs" />
 
 
+***
+
+### Paket.VisualStudio
+
+- Alpha version of [VisualStudio plugin](https://github.com/hmemcpy/Paket.VisualStudio)
+
+
+<br /><br />
+<img style="border: none" src="images/Paket.VisualStudio.png" alt="Paket.VisualStudio" /> 
+
+
+***
+
 ### ProjectScaffold
 
 - Allows a simple one step build and release process
@@ -704,19 +717,6 @@ http://sergey-tihon.github.io/Stanford.NLP.NET/
 
 - http://fsprojects.github.io/ProjectScaffold/
 
-
-<br /><br />
-<img src="images/projectscaffold-logo.png" alt="ProjectScaffold" /> 
-
-***
-
-### Paket.VisualStudio
-
-- Alpha version of [VisualStudio plugin](https://github.com/hmemcpy/Paket.VisualStudio)
-
-
-<br /><br />
-<img style="border: none" src="images/Paket.VisualStudio.png" alt="Paket.VisualStudio" /> 
 
 ***
 
