@@ -51,11 +51,51 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section >
+<br /><br /><br /><br />
+<h1>Paket + git = <span style="color:red">❤<span></h1>
+<br /><br /><br />
+<ul>
+<li>Steffen Forkmann</li>
+<li>@sforkmann</li>
+<li>github/forki</li>
+</ul>
+</section>
+<section >
+<h3>Quiz: What's this?</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="javascript">str <span class="o">=</span> String(str);
+
+<span class="k">var</span> i <span class="o">=</span> <span class="n">-1</span>;
+
+<span class="k">if</span> (!ch <span class="o">&amp;</span><span class="o">&amp;</span> ch <span class="o">!</span><span class="o">=</span><span class="o">=</span> <span class="n">0</span>) ch <span class="o">=</span> <span class="s">' '</span>;
+
+len <span class="o">=</span> len <span class="o">-</span> str.length;
+
+<span class="k">while</span> (<span class="o">+</span>+i <span class="o">&lt;</span> len) {
+  str <span class="o">=</span> ch <span class="o">+</span> str;
+}
+
+<span class="k">return</span> str;    
+</code></pre></td></tr></table>
+</section>
+<section >
 <h3>What is Paket?</h3>
 <ul>
 <li>Dependency manager for all .NET and Mono projects</li>
-<li>Plays well with NuGet packages and <a href="http://www.nuget.org">nuget.org</a></li>
-<li>Allows to reference source code files from HTTP sources and GitHub</li>
+<li>Version 1.0 released at F# eXchange 2015</li>
 </ul>
 <br /><br />
 <img style="border: none" src="images/logo.png" alt="Paket logo" /> 
@@ -68,7 +108,7 @@
 <li><a href="https://www.nuget.org/">nuget.org</a> is etablished package feed</li>
 </ul>
 <br /><br />
-<img style="border: none" src="images/nuget.png" alt="Nuget logo" /> 
+<img style="border: none" src="images/nuget.png" alt="NuGet logo" /> 
 </section>
 <section >
 <h3>Why another package manager?</h3>
@@ -84,7 +124,6 @@
 <h3>Why another package manager?</h3>
 <ul>
 <li>NuGet has no concept of transitive dependencies</li>
-<li>Which packages do we really need?</li>
 </ul>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
@@ -161,13 +200,6 @@
 </table>
 </section>
 <section >
-<h3>Why another package manager?</h3>
-<ul>
-<li>NuGet doesn't allow to reference plain source files</li>
-<li>If you want to reuse code you have to create a package</li>
-</ul>
-</section>
-<section >
 <h3>Why don't you contribute to NuGet?</h3>
 <ul>
 <li>NuGet is open source, but managed by Microsoft</li>
@@ -186,14 +218,29 @@
 </ul>
 </section>
 <section >
+<h3>Paket - Community</h3>
+<img style="border: none" src="images/logo-added.png" alt="Logo addedd" />
+</section>
+<section >
+<h3>Paket - Community</h3>
+<img style="border: none" src="images/typos.png" alt="Community" /> 
+</section>
+<section >
+<h3>Paket - Community</h3>
+<img style="border: none" src="images/PR1.gif" alt="Community" /> 
+</section>
+<section >
+<h3>Paket - Community</h3>
+<img style="border: none" src="images/Community.png" alt="Community" /> 
+</section>
+<section >
 <h3>Paket file structure</h3>
 <ul>
 <li><code>paket.dependencies</code>: Global definition of dependencies</li>
 <li><code>paket.lock</code>: List of used versions for all dependencies</li>
 <li><code>paket.references</code>: Dependency definition per project</li>
+<li><code>paket.template</code>: Package definition for new packages</li>
 </ul>
-<br /><br />
-<img style="border: none" src="images/structure.png" alt="Basic structure" /> 
 </section>
 <section >
 <h3>paket.dependencies</h3>
@@ -235,11 +282,9 @@
 <span class="l">10: </span>
 <span class="l">11: </span>
 <span class="l">12: </span>
-<span class="l">13: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">NUGET</span>
   <span class="k">remote</span>: https://nuget.org/api/v2
-  <span class="k">specs</span>:
     log4net (<span class="n">1.2.10</span>)
     Microsoft.Bcl (<span class="n">1.1.9</span>)
       Microsoft.Bcl.Build (<span class="o">&gt;=</span> <span class="n">1.0.14</span>)
@@ -268,6 +313,10 @@
 UnionArgParser
 NUnit
 </code></pre></td></tr></table>
+</section>
+<section >
+<h3>Paket file structure</h3>
+<img style="border: none" src="images/paket-overview.png" alt="Paket Overview" /> 
 </section>
 <section >
 <h3>Installing packages</h3>
@@ -375,6 +424,14 @@ Computes transitive dependencies from <code>paket.lock</code> file
 </ul>
 </section>
 <section >
+<h2>Recap: Basic structure</h2>
+<ul>
+<li>Command line tool over plain text</li>
+<li>Direct vs. transitive dependencies</li>
+<li>Only one version of a package</li>
+</ul>
+</section>
+<section >
 <h3>Source code dependencies</h3>
 <ul>
 <li>Allow to reference plain source code files</li>
@@ -415,11 +472,9 @@ Available for:
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
-<span class="l">4: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">GITHUB</span>
   <span class="k">remote</span>: forki/FsUnit
-  <span class="k">specs</span>:
     FsUnit.fs (7623fc13439f0e60bd05c1ed3b5f6dcb937fe468)
 </code></pre></td></tr></table>
 <ul>
@@ -455,6 +510,33 @@ Available for:
 <span class="k">File</span>:ProvidedTypes.fs
 <span class="k">File</span>:DebugProvidedTypes.fs 
 </code></pre></td></tr></table>
+</section>
+<section >
+<h3>Source code dependencies</h3>
+<h4>Use case - "Stanford.NLP.NET"</h4>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+  
+<span class="k">nuget </span>IKVM
+
+<span class="k">http </span>http://www.frijters.net/ikvmbin-<span class="n">8.1.5717.0</span>.zip
+<span class="k">http </span>http://nlp.stanford.edu/software/stanford-corenlp-full-<span class="n">2015</span>-<span class="n">12</span>-<span class="n">09</span>.zip
+<span class="k">http </span>http://nlp.stanford.edu/software/stanford-ner-<span class="n">2015</span>-<span class="n">12</span>-<span class="n">09</span>.zip
+<span class="k">http </span>http://nlp.stanford.edu/software/stanford-parser-full-<span class="n">2015</span>-<span class="n">12</span>-<span class="n">09</span>.zip
+<span class="k">http </span>http://nlp.stanford.edu/software/stanford-postagger-full-<span class="n">2015</span>-<span class="n">12</span>-<span class="n">09</span>.zip
+<span class="k">http </span>http://nlp.stanford.edu/software/stanford-segmenter-<span class="n">2015</span>-<span class="n">12</span>-<span class="n">09</span>.zip
+</code></pre></td></tr></table>
+<p><a href="http://sergey-tihon.github.io/Stanford.NLP.NET/">http://sergey-tihon.github.io/Stanford.NLP.NET/</a></p>
 </section>
 <section >
 <h3>Dependency Groups</h3>
@@ -511,31 +593,277 @@ Available for:
 <span class="l">14: </span>
 <span class="l">15: </span>
 <span class="l">16: </span>
-<span class="l">17: </span>
-<span class="l">18: </span>
-<span class="l">19: </span>
-<span class="l">20: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">NUGET</span>
   <span class="k">remote</span>: https://nuget.org/api/v2
-  <span class="k">specs</span>:
     Newtonsoft.Json (<span class="n">7.0.1</span>)
 <span class="k">GITHUB</span>
   <span class="k">remote</span>: forki/FsUnit
-  <span class="k">specs</span>:
     FsUnit.fs (81d27fd09575a32c4ed52eadb2eeac5f365b8348)
 <span class="k">GROUP</span> Build
 <span class="k">NUGET</span>
   <span class="k">remote</span>: https://nuget.org/api/v2
-  <span class="k">specs</span>:
     FAKE (<span class="n">4.3.1</span>)
     ...
 <span class="k">GROUP</span> Test
 <span class="k">NUGET</span>
   <span class="k">remote</span>: https://nuget.org/api/v2
-  <span class="k">specs</span>:
     NUnit (<span class="n">2.6.4</span>)
     NUnit.Runners (<span class="n">2.6.4</span>)
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Quiz: What's this?</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="javascript">str <span class="o">=</span> String(str);
+
+<span class="k">var</span> i <span class="o">=</span> <span class="n">-1</span>;
+
+<span class="k">if</span> (!ch <span class="o">&amp;</span><span class="o">&amp;</span> ch <span class="o">!</span><span class="o">=</span><span class="o">=</span> <span class="n">0</span>) ch <span class="o">=</span> <span class="s">' '</span>;
+
+len <span class="o">=</span> len <span class="o">-</span> str.length;
+
+<span class="k">while</span> (<span class="o">+</span>+i <span class="o">&lt;</span> len) {
+  str <span class="o">=</span> ch <span class="o">+</span> str;
+}
+
+<span class="k">return</span> str;
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>leftpad</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="javascript">module.exports <span class="o">=</span> leftpad;
+
+<span class="k">function</span> leftpad (str, len, ch) {
+  str <span class="o">=</span> String(str);
+
+  <span class="k">var</span> i <span class="o">=</span> <span class="n">-1</span>;
+
+  <span class="k">if</span> (!ch <span class="o">&amp;</span><span class="o">&amp;</span> ch <span class="o">!</span><span class="o">=</span><span class="o">=</span> <span class="n">0</span>) ch <span class="o">=</span> <span class="s">' '</span>;
+
+  len <span class="o">=</span> len <span class="o">-</span> str.length;
+
+  <span class="k">while</span> (<span class="o">+</span>+i <span class="o">&lt;</span> len) {
+    str <span class="o">=</span> ch <span class="o">+</span> str;
+  }
+
+  <span class="k">return</span> str;
+}
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>"How one developer just broke Node, Babel and thousands of projects in 11 lines of JavaScript"</h3>
+<img style="border: none" src="images/js_tower.jpg" alt="NPM Tower - Credit: Claus Rebler" />
+<br />
+<a href="http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/">http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/</a>
+</section>
+<section >
+<h2>This can happen to you!</h2>
+<img style="border: none" src="images/deleted.gif" alt="NuGet package deletion" />
+<ul>
+<li><a href="http://blog.nuget.org/20151007/Package-Content-and-Removals.html">http://blog.nuget.org/20151007/Package-Content-and-Removals.html</a></li>
+<li><a href="http://www.navision-blog.de/blog/2016/03/31/introducing-pakets-caching-feature-or-how-i-made-my-builds-reproducible-again/">http://www.navision-blog.de/blog/2016/03/31/introducing-pakets-caching-feature-or-how-i-made-my-builds-reproducible-again/</a></li>
+</ul>
+</section>
+<section >
+<h3>Additional Caches</h3>
+<h4>(v3 Feature)</h4>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+<span class="k">cache</span> <span class="c">//hive/dependencies</span>
+
+<span class="k">nuget </span>Newtonsoft.Json
+<span class="k">nuget </span>UnionArgParser
+<span class="k">nuget </span>FSharp.Core
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>git dependencies</h3>
+<h4>(v3 Feature)</h4>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">nuget </span>Newtonsoft.Json
+<span class="k">nuget </span>UnionArgParser
+
+<span class="k">git </span>http://github.com/forki/AskMe.git <span class="o">&lt;</span> <span class="n">3.0</span>
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>git dependencies as NuGet source</h3>
+<h4>(v3 Feature)</h4>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">git </span>https://github.com/forki/AskMe.git <span class="o">&lt;</span> <span class="n">3.0</span> Packages: /<span class="k">source</span>/
+
+<span class="k">nuget </span>AskMe
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>git dependencies as NuGet source</h3>
+<h4>(v3 Feature)</h4>
+<img style="border: none" src="images/git-ref.png" alt="git repository" />
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">git </span>https://.../test.<span class="k">git </span>build:<span class="s">"build.cmd"</span>, Packages: /<span class="k">source</span>/, OS:windows
+<span class="k">git </span>https://.../test.<span class="k">git </span>build:<span class="s">"build.sh"</span>, Packages: /<span class="k">source</span>/, OS:mono
+
+<span class="k">nuget </span>Argu
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>git dependencies</h3>
+<h4>Use case - "Ionide"</h4>
+<img style="border: none" src="images/fsi.gif" alt="Ionide" />
+</section>
+<section >
+<h3>git dependencies</h3>
+<h4>Use case - "Ionide"</h4>
+<img style="border: none" src="images/ionide-white.png" alt="Ionide" width=100 />
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">git </span>https://.../ionide-vscode-helpers.<span class="k">git </span>master build:<span class="s">"build.cmd"</span>
+<span class="k">git </span>https://.../FSharpFormatting.CLI.<span class="k">git </span>master build:<span class="s">"build.cmd"</span>
+<span class="k">git </span>https://.../FsAutoComplete.<span class="k">git </span>dotnetcore build:<span class="s">"build.cmd LocalRelease"</span>
+<span class="k">git </span>git@github.com:ionide/ionide-fsgrammar.git
+
+<span class="k">nuget </span>FAKE
+<span class="k">nuget </span>FunScript
+<span class="k">nuget </span>Npm.js
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>git dependencies</h3>
+<h4>Use case - "Ionide"</h4>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+<span class="l">18: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">NUGET</span>
+  <span class="k">remote</span>: https://www.nuget.org/api/v2
+    FAKE (<span class="n">4.25.2</span>)
+    FunScript (<span class="n">1.1.94</span>)
+    ...
+    Npm.js (<span class="n">2.13.1</span>)
+<span class="k">GIT</span>
+  <span class="k">remote</span>: https://github.com/ionide/ionide-vscode-helpers.git
+     (b81a80ede2179222a5639cf866423d9bc6c2f0b4)
+      build: build.cmd
+  <span class="k">remote</span>: https://github.com/ionide/FSharpFormatting.CLI.git
+     (8b996684032cebe1ba052696fb30081fab023b1f)
+      build: build.cmd
+  <span class="k">remote</span>: https://github.com/ionide/FsAutoComplete.git
+     (8be5fa64fdd5b8f811c7dda1beaa3b861c5808b2)
+      build: build.cmd LocalRelease
+  <span class="k">remote</span>: git@github.com:ionide/ionide-fsgrammar.git
+     (8061b5296321522633b16d7df66af8cf5fcd3784)
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>git dependencies</h3>
+<h4>Use case - "Ionide"</h4>
+<img style="border: none" src="images/ionide-repos.png" alt="Ionide" />
+</section>
+<section >
+<h3>git dependencies</h3>
+<h4>Use case - "Ionide"</h4>
+<img style="border: none" src="images/clone-and-build.png" alt="Ionide" />
+</section>
+<section >
+<h3>git dependencies</h3>
+<h4>Use case - "Ionide"</h4>
+<img style="border: none" src="images/result.png" alt="Ionide" />
+</section>
+<section >
+<h3>git dependencies</h3>
+<h4>Use case - "Bugfixing"</h4>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="paket"><span class="k">source</span> https://nuget.org/api/v2
+
+<span class="k">git </span>https://github.com/fsharp/FAKE.git <span class="c">// temp</span>
+
+<span class="k">nuget </span>FAKE
+...
 </code></pre></td></tr></table>
 </section>
 <section >
@@ -553,34 +881,65 @@ Available for:
 </ul>
 </section>
 <section >
-<h3>ProjectScaffold</h3>
+<h3>Paket.VisualStudio</h3>
 <ul>
-<li>Used to initialialize a prototypical .NET/mono solution</li>
-<li>
-This includes Paket and a FAKE build process that:
+<li><a href="https://github.com/hmemcpy/Paket.VisualStudio">VisualStudio plugin</a></li>
+</ul>
+<br />
+<img style="border: none" src="images/Paket.VisualStudio.png" alt="Paket.VisualStudio" />
+</section>
+<section >
+<h3>Paket.XamarinStudio</h3>
 <ul>
-<li>allows a simple one step build and release process</li>
-<li>works with most build servers</li>
-<li>compiles the application and runs all test projects</li>
-<li>synchronizes all AssemblyInfo files prior to compilation</li>
-<li>generates API docs based on XML documentation tags</li>
-<li>generates documentation based on Markdown files</li>
-<li>generates and pushes NuGet packages</li>
+<li><a href="http://addins.monodevelop.com/">Xamarin Studio plugin</a></li>
 </ul>
-</li>
-<li><a href="http://fsprojects.github.io/ProjectScaffold/">http://fsprojects.github.io/ProjectScaffold/</a></li>
+<br />
+<img style="border: none" src="images/paket-xamarin-studio.png" alt="Paket.XamarinStudio" />
+</section>
+<section >
+<h3>Paket.Atom</h3>
+<ul>
+<li>Available in <a href="https://atom.io/packages/paket">Atom's plugin manager</a></li>
 </ul>
-<br /><br />
-<img src="images/projectscaffold-logo.png" alt="ProjectScaffold" /> 
+<br />
+<img style="border: none" src="images/paket-add-atom.gif" alt="Paket.Atom" />
+</section>
+<section >
+<h3>Paket.VSCode</h3>
+<ul>
+<li>Available in <a href="https://code.visualstudio.com/docs/editor/extension-gallery">VSCode's plugin manager</a></li>
+</ul>
+<br />
+<img style="border: none" src="images/paket-vscode.gif" alt="Paket.VSCode" />
+</section>
+<section >
+<h3>Paket.Emacs</h3>
+<ul>
+<li>Project site: <a href="https://github.com/zzdtri/paket.el"><a href="https://github.com/zzdtri/paket.el">https://github.com/zzdtri/paket.el</a></a></li>
+</ul>
+<br />
+<img style="border: none" src="images/paket-add-emacs.gif" alt="Paket.Emacs" />
 </section>
 <section >
 <h3>Paket.VisualStudio</h3>
 <ul>
 <li>Alpha version of <a href="https://github.com/hmemcpy/Paket.VisualStudio">VisualStudio plugin</a></li>
-<li>Takes contributions</li>
 </ul>
 <br /><br />
 <img style="border: none" src="images/Paket.VisualStudio.png" alt="Paket.VisualStudio" /> 
+</section>
+<section >
+<h3>ProjectScaffold</h3>
+<ul>
+<li>Allows a simple one step build and release process</li>
+<li>Works with most build servers</li>
+<li>Compiles the application and runs all test projects</li>
+<li>Synchronizes AssemblyInfo files prior to compilation</li>
+<li>Generates API docs based on XML documentation</li>
+<li>Generates documentation based on Markdown files</li>
+<li>Generates and pushes NuGet packages</li>
+<li><p><a href="http://fsprojects.github.io/ProjectScaffold/">http://fsprojects.github.io/ProjectScaffold/</a></p></li>
+</ul>
 </section>
 <section >
 <h3>Thank you</h3>
@@ -589,6 +948,7 @@ This includes Paket and a FAKE build process that:
 <li>We take contributions!</li>
 <li>Slides are MIT licensed and made using <a href="http://fsprojects.github.io/FsReveal/">FsReveal</a></li>
 <li>Send corrections to <a href="https://github.com/forki/PaketIntro">https://github.com/forki/PaketIntro</a></li>
+<li>Follow <a href="https://twitter.com/PaketManager">@PaketManager</a></li>
 </ul>
 </section>
 
