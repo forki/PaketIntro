@@ -631,6 +631,19 @@ http://sergey-tihon.github.io/Stanford.NLP.NET/
 
 <img style="border: none" src="images/result.png" alt="Ionide" />
 
+***
+
+### git dependencies 
+#### Use case - "Bugfixing"
+
+    [lang=paket]
+    source https://nuget.org/api/v2
+    
+    git https://github.com/fsharp/FAKE.git // temp
+    
+    nuget FAKE
+    ...
+
 
 ***
 
